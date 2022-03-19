@@ -32,3 +32,20 @@ function likes(names) {
     return `${names[0]}, ${names[1]} and ${names.length-2} others like this`;
   }
 }
+
+// Return element with odd number of entries
+
+function findOdd(A) {
+  let count = {};
+  for(num of A) {
+    if(count[num]) {
+      count[num] +=1;
+    }else
+     count[num] = 1;
+  }
+  for(const property in count ) {
+    if(count[property]%2!=0) {
+      return Number(property);
+    }
+  }
+}
