@@ -49,3 +49,66 @@ function findOdd(A) {
     }
   }
 }
+
+// Return user inputted sentence with all five or longer lettered words backwards
+
+function spinWords(string){
+  const words = string.split(" ");
+  for(i=0;i<words.length;i++) {
+    if(words[i].length > 4) {
+      words[i] = words[i].split("").reverse().join("");
+    }
+  }
+  return words.join(" ");
+}
+
+// return number made as small as possible by moving one digit to anywhere in the number
+
+function smallest(n) {
+	let digits = (""+n).split("").map(Number);
+  let small;
+  let med;
+  let big;
+  let posX;
+  let posY;
+  let posZ;
+  for(i=0;i<digits.length;i++) {
+    if(digits[i] < small  || small == undefined || digits[i] == 0) {
+      small = digits[i];
+      posX = i;
+    }
+  }
+  for(k=0;k<digits.length;k++) {
+    if((digits[k] > small && digits[k] < med) || med == undefined && digits[k] > small) {
+      med = digits[k];
+    	posZ = k;
+    }
+  }
+  for(j=0;j<digits.length;j++) {  
+    if(digits[j] > big || big == undefined) {
+      big = digits[j];
+      posY = j;
+    }
+  }
+  if(posX == 0) {
+    for(l=1;l<digits.length;l++) {
+      if(digits[l] > med) {
+    		digits.splice(posZ,1);
+    		digits.splice(l,0,med);
+    		num = Number(digits.join(""));
+        if(l >= posZ ) {
+    		return arr = [num,l,posZ];
+        break;
+        } else {
+          return arr = [num,posZ,l];
+          break;
+        }
+      }
+    }
+  } else {
+ 		digits.splice(posX,1);
+    digits.splice(0,0,small);
+    num = Number(digits.join(""));
+    return arr = [num,0,posX];
+  }
+}
