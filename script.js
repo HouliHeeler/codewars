@@ -112,3 +112,31 @@ function smallest(n) {
     return arr = [num,0,posX];
   }
 }
+
+// Convert seconds provided into human readable time
+
+function humanReadable(seconds) {
+  let hours = 00;
+  let mins = 00;
+  let secs = 00;
+  if(seconds >= 3600) {
+    hours = Math.floor(seconds/3600);
+    mins = Math.floor((seconds%3600)/60);
+    secs = Math.floor((seconds%3600)%60);
+  }else if(seconds >=60) {
+    mins = Math.floor(seconds/60);
+    secs = Math.floor(seconds%60);
+  }else {
+    secs = seconds;
+  }
+  if(hours < 10) {
+    hours = ("0" + hours);
+  }
+  if(mins < 10) {
+    mins = ("0" + mins);
+  }
+  if(secs < 10) {
+    secs = ("0" + secs);
+  }
+  return `${hours}:${mins}:${secs}`;
+}
