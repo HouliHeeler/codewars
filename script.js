@@ -140,3 +140,46 @@ function humanReadable(seconds) {
   }
   return `${hours}:${mins}:${secs}`;
 }
+
+// Return true if all sets of parentheses are closed properly, else return false
+
+function validParentheses(parens) {
+  const parArr = parens.split("");
+  let open = 0;
+  let closed = 0;
+  for(i=0;i<parArr.length;i++) {
+    if(parArr[i]===`)`) {
+      closed++;
+      if(closed > open) {
+        return false;
+      }
+    }else if (parArr[i]=== `(`) {
+      open++;
+    }
+  }
+  if(closed == open) {
+  return true;
+  } else
+    return false;
+}
+
+// Return string as a Twitter friendly hashtag
+
+function generateHashtag(str) {
+  const arr = str.split(" ");
+  for(i=0;i<arr.length;i++) {
+    if(arr[i] == " " || arr[i] == "") {
+      arr.splice(i,1);
+      i--;
+    }
+  }
+  for(j=0;j<arr.length;j++) {
+    arr[j] = arr[j][0].toUpperCase() + arr[j].substring(1);
+  }
+  let newStr = arr.join("");
+  console.log(newStr.length);
+  if(newStr.length > 139 || newStr.length == 0) {
+    return false;
+  }else
+  	return ("#" + newStr);
+}
