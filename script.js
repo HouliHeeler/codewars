@@ -183,3 +183,13 @@ function generateHashtag(str) {
   }else
   	return ("#" + newStr);
 }
+
+//create phone number from given array
+
+function createPhoneNumber(n) {
+  let format = "(xxx) xxx-xxxx";
+  for(i=0;i<n.length;i++) {
+    format = format.replace("x",n[i]);
+  }
+  return format;
+}
