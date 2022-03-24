@@ -193,3 +193,9 @@ function createPhoneNumber(n) {
   }
   return format;
 }
+
+//Solve whether you have enough fuel to get to your destination
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return distanceToPump/mpg <= fuelLeft
+};
