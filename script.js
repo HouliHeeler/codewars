@@ -219,3 +219,15 @@ function descendingOrder(n){
   const arr = n.toString().split("").sort((a,b) => b-a);
   return Number(arr.join(""));
 }
+
+//Return given array with strings filtered out
+
+function filter_list(l) {
+  let arr = [];
+  for(i=0;i<l.length;i++) {
+    if(Number.isInteger(l[i])) {
+      arr.push(l[i]);
+    }
+  }
+  return arr;
+}
