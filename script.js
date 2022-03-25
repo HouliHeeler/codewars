@@ -199,3 +199,10 @@ function createPhoneNumber(n) {
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
   return distanceToPump/mpg <= fuelLeft
 };
+
+//Return highest and lowest from given string of numbers
+
+function highAndLow(numbers){
+  const arr = numbers.split(" ").sort((a,b) => a - b);
+  return `${arr[arr.length-1]} ${arr[0]}`
+}
