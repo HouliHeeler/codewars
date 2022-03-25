@@ -206,3 +206,9 @@ function highAndLow(numbers){
   const arr = numbers.split(" ").sort((a,b) => a - b);
   return `${arr[arr.length-1]} ${arr[0]}`
 }
+
+//Is given integer a squared number
+
+var isSquare = function(n){
+  return Number.isInteger(Math.sqrt(n));
+}
