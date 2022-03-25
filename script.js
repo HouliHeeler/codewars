@@ -212,3 +212,10 @@ function highAndLow(numbers){
 var isSquare = function(n){
   return Number.isInteger(Math.sqrt(n));
 }
+
+//Return individual digits of given integer in descending order
+
+function descendingOrder(n){
+  const arr = n.toString().split("").sort((a,b) => b-a);
+  return Number(arr.join(""));
+}
