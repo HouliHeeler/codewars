@@ -231,3 +231,17 @@ function filter_list(l) {
   }
   return arr;
 }
+
+//Remove from first given array any elements found in second given array
+
+function arrayDiff(a, b) {
+  for(i=a.length-1;i>=0;i--) {
+    for(j=0;j<b.length;j++) {
+      if(a[i] === b[j]) {
+        console.log(a[i])
+        a.splice(i,1)
+      }
+    }
+  }
+  return a;
+ }
