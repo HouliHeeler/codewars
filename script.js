@@ -346,3 +346,11 @@ function narcissistic(value) {
   }
   return (total == value);
 }
+
+//Check if given string is a pangram
+
+function isPangram(string){
+  const arr = string.toLowerCase().split("").filter(c => c >= "a" && c <= "z");
+  const unique = new Set(arr);
+  return (unique.size >= 26);
+}
