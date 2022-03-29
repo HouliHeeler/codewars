@@ -354,3 +354,37 @@ function isPangram(string){
   const unique = new Set(arr);
   return (unique.size >= 26);
 }
+
+//Increment the number at the end of a string
+
+function incrementString (strng) {
+  const arr = strng.split("");
+  const nums = [];
+  const word = [];
+  if(isNaN(arr[arr.length - 1])) {
+    arr.push("1");
+    return arr.join("");
+  } else {
+    for(i=0;i<arr.length;i++) {
+      if(isNaN(arr[i])) {
+        word.push(arr[i]);
+      }else {
+        nums.push(arr[i]);
+      }
+    }
+  }
+  for(i=nums.length-1;i>=0;i--) {
+    if(nums[i] == 9 && i == 0) {
+      nums[0] = "0";
+      nums.unshift("1");
+      break;
+    } else if(nums[i] == 9) {
+      nums[i] = "0";
+      continue;
+    } else 
+    	nums[i]++;
+    	break;
+  }
+  let num = nums.join("");
+  return word.concat(num).join("");
+}
