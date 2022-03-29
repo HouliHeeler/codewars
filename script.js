@@ -260,3 +260,18 @@ function doubleOrNothing(cash, wager, losses){
     return "I'll pay you back later"
 }
 
+// Return given number as sum of binary translation
+
+function countBits(n) {
+  let arr = [];
+  let a;
+  while(n>0) {
+   	a = n;
+   	n = Math.floor(n/2);
+   	arr.push(a%2);
+  }
+  if (arr == "") {
+    return 0;
+  } else
+  return arr.reduce((x,y) => x + y);
+};
