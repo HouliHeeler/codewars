@@ -245,3 +245,18 @@ function arrayDiff(a, b) {
   }
   return a;
  }
+
+//Resolve double or nothing gambling
+
+function doubleOrNothing(cash, wager, losses){
+  let a;
+  for(i=1;i<losses;i++) {
+    a = wager
+    wager += a;
+  }
+  if(cash - wager >= 0) {
+    return cash - wager
+  } else
+    return "I'll pay you back later"
+}
+
