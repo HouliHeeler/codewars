@@ -334,3 +334,15 @@ function findShort(s){
   const arr = s.split(" ").sort((a,b) => a.length - b.length);
   return arr[0].length;
 }
+
+//Check if given number equals the sum of each digit to the power of the number of digits in given number
+
+function narcissistic(value) {
+  let total = 0;
+  const arr = value.toString().split("");
+  for(i=0;i<arr.length;i++) {
+    arr[i] = Number(arr[i]);
+    total += (arr[i]**arr.length);
+  }
+  return (total == value);
+}
