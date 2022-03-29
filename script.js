@@ -275,3 +275,19 @@ function countBits(n) {
   } else
   return arr.reduce((x,y) => x + y);
 };
+
+//Return number of duplicated characters in given string
+
+function duplicateCount(text){
+  const letters =text.toUpperCase().split("").sort();
+  console.log(letters);
+  const duplicates = [];
+  for(i=0;i<letters.length;i++) {
+    if(letters[i] == letters[i-1]) {
+      duplicates.push(letters[i]);
+    }
+  }
+  console.log(duplicates);
+  const dupes = new Set(duplicates)
+  return dupes.size;
+}
