@@ -291,3 +291,20 @@ function duplicateCount(text){
   const dupes = new Set(duplicates)
   return dupes.size;
 }
+
+//Return solitary odd or even number from given string
+
+function findOutlier(integers){
+  let odd = [];
+  let even = [];
+  for(i=0;i<integers.length;i++) {
+    if(integers[i]%2 == 0) {
+      even.push(integers[i]);
+    }else
+     odd.push(integers[i]);
+  }
+  if(odd.length > even.length) {
+    return even[0];
+  }else
+    return odd[0];
+}
