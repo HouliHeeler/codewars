@@ -308,3 +308,22 @@ function findOutlier(integers){
   }else
     return odd[0];
 }
+
+//Add digits of given number together until sum is a single digit number
+
+function digital_root(n) {
+  if(n == 0) {
+    return 0;
+  }
+  let arr;
+  let num = n.toString().split("");
+  let number = num.map(x => Number(x));
+  for(i=0;i<n;i++) {
+    if(number.length > 1) {
+     arr = number.reduce((a,b) => a + b);
+     num = arr.toString().split("");
+     number = num.map(x => Number(x));
+    }else
+     return number[0];
+  }
+}
