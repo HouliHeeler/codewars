@@ -388,3 +388,15 @@ function incrementString (strng) {
   let num = nums.join("");
   return word.concat(num).join("");
 }
+
+//return string with alphabetical characters replaced with numerical place in alphabet
+
+function alphabetPosition(x) {
+  let text = x.toLowerCase();
+  let final = [];
+  for(i=0;i<text.length;i++) {
+    if(text[i] >= "a" && text[i] <= "z")
+    final.push(text.charCodeAt(i)-96);
+  }
+  return final.join(" ");
+}
