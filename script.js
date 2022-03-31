@@ -400,3 +400,22 @@ function alphabetPosition(x) {
   }
   return final.join(" ");
 }
+
+//Return only numbers that are the first in their string of repeat numbers
+
+var uniqueInOrder=function(iterable){
+  let arr = iterable.toString().split("");
+  for(i=0;i<arr.length;) {
+    if(arr[i] === arr[i-1] || arr[i] == ","){
+      arr.splice(i,1);
+    } else
+      i++;
+  }
+  for(i=0;i<arr.length;i++) {
+    if(isNaN(arr[i])) {
+    }else {
+      arr[i] = Number(arr[i]);
+    }
+  }
+  return arr;
+}
