@@ -419,3 +419,26 @@ var uniqueInOrder=function(iterable){
   }
   return arr;
 }
+
+//Show when the sum of given array forwards equals the sum of the same array backwards
+
+function findEvenIndex(arr){
+  let sumforward = 0;
+  let sumbackward = 0;
+  let arrForward = [];
+  let arrBackward = [];
+  for(i=0;i<arr.length;i++) {
+    sumforward += arr[i];
+    arrForward.push(sumforward);
+  }
+  for(j=arr.length-1;j>=0;j--) {
+    sumbackward += arr[j];
+    arrBackward.push(sumbackward);
+  }
+  for(k=0;k<arr.length;k++) {
+    if(arrForward[k] == arrBackward[(arrBackward.length - 1) - k]) {
+      return k;
+    }
+  }
+  return -1;
+}
