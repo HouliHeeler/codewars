@@ -442,3 +442,13 @@ function findEvenIndex(arr){
   }
   return -1;
 }
+
+//Convert given string to camelCase
+
+function toCamelCase(str){
+	let arr = str.split(/[^A-Za-z]/);
+  for(i=1;i<arr.length;i++) {
+    arr.splice(i,1,arr[i].charAt(0).toUpperCase() + arr[i].slice(1));
+  }
+  return arr.join("");
+}
