@@ -452,3 +452,19 @@ function toCamelCase(str){
   }
   return arr.join("");
 }
+
+//Conclude whether the amounts of X's and O's are equal
+
+function XO(str) {
+  let arr = str.toLowerCase().split("");
+  let xcount = 0;
+  let ocount = 0;
+  for(i=0;i<arr.length;i++) {
+    if(arr[i] == "x") {
+      xcount++;
+    }else if (arr[i] == "o") {
+      ocount++;
+    }
+  }  
+  return (xcount == ocount);
+}
