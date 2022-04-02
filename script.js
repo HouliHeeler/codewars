@@ -468,3 +468,13 @@ function XO(str) {
   }  
   return (xcount == ocount);
 }
+
+//Find unique number in given array
+
+function findUniq(arr) {
+  for(i=0;i<arr.length;i++) {
+    if(arr.indexOf(arr[i]) == arr.lastIndexOf(arr[i])) {
+      return arr[i];
+    }
+  }
+}
