@@ -478,3 +478,16 @@ function findUniq(arr) {
     }
   }
 }
+
+//Return first instance of unique character, in case it was given in
+
+function firstNonRepeatingLetter(s) {
+  let arr = s.toLowerCase().split("");
+  console.log(arr);
+ 	for(i=0;i<arr.length;i++) {
+  	if(arr.indexOf(arr[i]) == arr.lastIndexOf(arr[i])) {
+    	return s[i];
+    }
+  }
+  return "";
+}
