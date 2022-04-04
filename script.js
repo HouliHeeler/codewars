@@ -491,3 +491,18 @@ function firstNonRepeatingLetter(s) {
   }
   return "";
 }
+
+//Return victor of battle for Good versus Evil based on given strings
+
+function goodVsEvil(good, evil){
+  let goodArr = good.split(" ");
+  let evilArr = evil.split(" ");
+  let goodValue = Number(goodArr[0]) + (Number(goodArr[1])*2) + ((Number(goodArr[2])+Number(goodArr[3]))*3) + (Number(goodArr[4])*4) + (Number(goodArr[5])*10);
+  let evilValue = Number(evilArr[0]) + ((Number(evilArr[1])+Number(evilArr[2])+Number(evilArr[3]))*2) + (Number(evilArr[4])*3) + (Number(evilArr[5])*5) + (Number(evilArr[6])*10);
+  if(goodValue > evilValue) {
+    return 'Battle Result: Good triumphs over Evil'
+  } else if(evilValue > goodValue) {
+    return 'Battle Result: Evil eradicates all trace of Good'
+  } else
+    return 'Battle Result: No victor on this battle field'
+}
