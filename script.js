@@ -506,3 +506,16 @@ function goodVsEvil(good, evil){
   } else
     return 'Battle Result: No victor on this battle field'
 }
+
+//compare two arrays and see if the second equals the squared values of the first
+
+function comp(array1, array2){
+  let arr1 = array1.sort((a,b) => a - b);
+  let arr2 = array2.sort((a,b) => a - b);
+  for(i=0;i<arr1.length;i++) {
+    if(arr2[i] != Math.pow(arr1[i],2)) {
+      return false
+    }
+  }
+  return true;
+}
