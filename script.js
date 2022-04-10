@@ -519,3 +519,15 @@ function comp(array1, array2){
   }
   return true;
 }
+
+//return given string as repeated characters based on position in string, first letter capitalized
+
+function accum(s) {
+  let arr = s.toLowerCase().split("");
+  let repArr = [];
+  for(i=0;i<arr.length;i++) {
+    repArr.push(arr[i].repeat(i+1));
+  }
+  upperArr = repArr.map(x => x[0].toUpperCase() + x.substring(1));
+  return upperArr.join("-");
+}
