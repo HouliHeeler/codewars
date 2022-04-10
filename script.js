@@ -543,3 +543,14 @@ function longest(words) {
   }
   return lword;
 }
+
+//Create a prototype that will capitalize the first letter of every word in a given string
+
+String.prototype.toJadenCase = function () {
+  const words = this.split(" ");
+  	console.log(words)
+  	for ( i=0; i<words.length; i++ ) {
+      words[i] = words[i][0].toUpperCase() + 		words[i].substr(1);
+		}
+    return words.join(" ");
+}
