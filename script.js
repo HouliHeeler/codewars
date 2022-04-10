@@ -531,3 +531,15 @@ function accum(s) {
   upperArr = repArr.map(x => x[0].toUpperCase() + x.substring(1));
   return upperArr.join("-");
 }
+
+//Return length of longest word in given array
+
+function longest(words) {
+  let lword = 0;
+  for(i=0;i<words.length;i++) {
+    if(words[i].length > lword) {
+      lword = words[i].length
+    }
+  }
+  return lword;
+}
