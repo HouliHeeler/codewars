@@ -568,3 +568,48 @@ function pigIt(str){
   }
   return pigArr.join(" ");
 }
+
+//Convert RGB to Hex
+
+function rgb(r, g, b){
+  let arr = [];
+  let newArr = [];
+  if(r > 255) {
+  	arr.push(Math.floor(255/16).toString());
+    arr.push((255%16).toString());
+  } else if( r < 0) {
+    arr.push(0);
+    arr.push(0);
+  } else {
+    arr.push(Math.floor(r/16).toString());
+  	arr.push((r%16).toString());
+  }
+  if(g > 255) {
+  	arr.push(Math.floor(255/16).toString());
+    arr.push((255%16).toString());
+  } else if( g < 0) {
+    arr.push(0);
+    arr.push(0);
+  } else {
+    arr.push(Math.floor(g/16).toString());
+  	arr.push((g%16).toString());
+  }
+  if(b > 255) {
+  	arr.push(Math.floor(255/16).toString());
+    arr.push((255%16).toString());
+  } else if( b < 0) {
+    arr.push(0);
+    arr.push(0);
+  } else {
+    arr.push(Math.floor(b/16).toString());
+  	arr.push((b%16).toString());
+  }
+  for(i=0;i<arr.length;i++) {
+    if(arr[i] > 9) {
+      let str = arr[i].replace("10","A").replace("11","B").replace("12","C").replace("13","D").replace("14","E").replace("15","F");
+      newArr.push(str);
+    }else
+      newArr.push(arr[i]);
+  }
+  return newArr.join("");
+}
