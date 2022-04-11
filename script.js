@@ -554,3 +554,17 @@ String.prototype.toJadenCase = function () {
 		}
     return words.join(" ");
 }
+
+//Convert given string to pig latin
+
+function pigIt(str){
+  let arr = str.split(" ");
+  let pigArr = [];
+  for(i=0;i<arr.length;i++) {
+    if(arr[i].match(/[a-z]/i)) {
+    	pigArr.push(arr[i].substring(1) + arr[i].substring(0,1) + "ay");
+    }else
+      pigArr.push(arr[i]);
+  }
+  return pigArr.join(" ");
+}
