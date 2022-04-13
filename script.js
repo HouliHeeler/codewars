@@ -613,3 +613,16 @@ function rgb(r, g, b){
   }
   return newArr.join("");
 }
+
+//Calculate sum of all numbers between two given numbers
+
+function getSum( a,b )
+{
+	let arr = [a,b];
+	let arrNew = arr.sort((a,b) => a - b);
+  let sum = 0;
+  for(i=arrNew[0];i<=arrNew[1];i++) {
+    sum += i;
+  }
+  return sum;
+}
