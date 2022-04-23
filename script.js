@@ -665,3 +665,16 @@ var containsDuplicate = function(nums) {
   } else
       return true
 };
+
+//Blind 72 Product of Array Except Self
+
+var productExceptSelf = function(nums) {
+  let answer = [];
+  let splice;
+  for(i=0;i<nums.length;i++) {
+    splice = nums.splice(i,1);
+    answer.push(nums.reduce((a,b) => a * b));
+    nums.splice(i,0,splice[0]);
+  }
+  return answer;
+};
