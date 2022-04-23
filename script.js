@@ -678,3 +678,29 @@ var productExceptSelf = function(nums) {
   }
   return answer;
 };
+
+//Pick Peaks from Array
+
+function pickPeaks(arr){
+  let obj = {
+    pos: [],
+    peaks: [],
+  };
+  for(i=0;i<arr.length;i++) {
+    if(arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+      obj.pos.push(i);
+      obj.peaks.push(arr[i]);
+    }else if(arr[i] > arr[i-1] && arr[i] == arr[i + 1]) {
+     	for(j=(i+2);j<arr.length;j++) {
+        if(arr[j] < arr[i]) {
+          obj.pos.push(i);
+          obj.peaks.push(arr[i]);
+          break;
+        }else if(arr[j] > arr[i]) {
+          break;
+        }
+      }
+    }
+  }
+  return obj;
+}
