@@ -626,3 +626,42 @@ function getSum( a,b )
   }
   return sum;
 }
+
+//Blind 75 Two Sum
+
+var twoSum = function(nums, target) {
+  let arr = [];
+  for(i=0;i<nums.length;i++) {
+    for(j=1;j<nums.length;j++) {
+    	if(nums[i] + nums[j] == target && i != j) {
+        arr.push(i);
+        arr.push(j);
+        return arr;
+      } 
+    }
+  }	
+};
+
+//Blind 74 Best Time to Buy and Sell Stock
+
+var maxProfit = function(prices) {
+	let sum = 0;
+  for(i=prices.length-1;i>=0;i--) {
+    for(j=prices.length-2;j>=0;j--) {
+      if(sum < (prices[i] - prices[j]) && j < i) {
+        sum = (prices[i] - prices[j]);
+      }
+    }
+  }
+  return sum;
+};
+
+//Blind 73 Contains Duplicate
+
+var containsDuplicate = function(nums) {
+  const dupe = new Set(nums);
+  if(dupe.size == nums.length) {
+      return false
+  } else
+      return true
+};
