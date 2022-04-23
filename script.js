@@ -704,3 +704,18 @@ function pickPeaks(arr){
   }
   return obj;
 }
+
+//Encode given array based on repeat characters
+
+function duplicateEncode(word){
+  let code = [];
+  text = word.toLowerCase().split("");
+  for(i=0;i<text.length;i++) {
+    console.log(text.indexOf(text[i]));
+    if(i == text.lastIndexOf(text[i]) && i == text.indexOf(text[i],0)) {
+      code.push("(");
+    }else
+      code.push(")");
+  }
+  return code.join("");
+}
