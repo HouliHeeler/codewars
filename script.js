@@ -731,3 +731,11 @@ function persistence(num) {
   }
   return count;
 }
+
+//Sort given string by numbers in words
+
+function order(words){
+  let arr = words.split(" ");
+  return arr.sort((a,b) => a.replace(/\D/g, "") - b.replace(/\D/g, ""))
+            .join(" ");
+}
