@@ -719,3 +719,15 @@ function duplicateEncode(word){
   }
   return code.join("");
 }
+
+//Multiply digits of given number until product is only one digit
+
+function persistence(num) {
+	let count = 0;
+  while(num.toString().length > 1) {
+    num = num.toString().split("").reduce((a,b) => a * b);
+    console.log(num);
+  	count++
+  }
+  return count;
+}
