@@ -739,3 +739,26 @@ function order(words){
   return arr.sort((a,b) => a.replace(/\D/g, "") - b.replace(/\D/g, ""))
             .join(" ");
 }
+
+//Split given string into array of two character pairs
+
+function solution(str) {
+  let arr = str.split("");
+ 	let sol = [];
+  if(str == "") {
+    return sol;
+  }
+	while(str.length > 0) {
+    if(arr.length == 1) {
+      sol.push(`${arr[0]}_`);
+      break;
+    } else if(arr.length == 0) {
+      break;
+    }
+      else {
+    	sol.push(`${arr[0]}${arr[1]}`);
+    	arr.splice(0,2);
+    }
+  }
+  return sol;
+}
