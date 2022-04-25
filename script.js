@@ -762,3 +762,18 @@ function solution(str) {
   }
   return sol;
 }
+
+//Compare two given arrays and return elements of Array 1 that exist in elements of Array 2
+
+function inArray(array1,array2){
+  let arr = [];
+  for(i=0;i<array1.length;i++) {
+    for(j=0;j<array2.length;j++) {
+      if(array2[j].includes(array1[i])) {
+        arr.push(array1[i]);
+        break;
+      }
+    }
+  }
+  return arr.sort();
+}
