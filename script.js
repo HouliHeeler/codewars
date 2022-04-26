@@ -812,3 +812,23 @@ function dirReduc(arr){
   }
   return arr;
 }
+
+//Sort odd numbers in given array while leaving even numbers in place
+
+function sortArray(array) {
+  let odds = [];
+  let count = 0;
+  for(i=0;i<array.length;i++) {
+    if(array[i] % 2 != 0) {
+      odds.push(array[i]);
+      odds.sort((a,b) => a - b);
+    }
+  }
+  for(i=0;i<array.length;i++) {
+    if(array[i] % 2 != 0) {
+      array.splice(i,1,odds[count]);
+      count++;
+    }
+  }
+  return array;
+}
