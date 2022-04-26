@@ -777,3 +777,21 @@ function inArray(array1,array2){
   }
   return arr.sort();
 }
+
+//Find the next bigger number using the same digits
+
+function nextBigger(n){
+  let high = Number(n.toString()
+                     .split("")
+                     .sort((a,b) => b - a)
+                     .join(""));
+  if(n === high) {
+    return -1;
+  } else {
+    for(i=(n+1);i<=high;i++) {
+      if(Number(i.toString().split("").sort((a,b) => b - a).join("")) == high) {
+        return i;
+      }
+    }
+  }
+}
