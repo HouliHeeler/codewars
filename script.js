@@ -832,3 +832,22 @@ function sortArray(array) {
   }
   return array;
 }
+
+//Calculate white and black squares on chessboard with given dimensions
+
+function whiteBlackAreas(cols, rows) {
+  let arr = [];
+  let white = 0;
+  let black = 0;
+  for(i=0;i<cols.length;i++) {
+  	for(j=0;j<rows.length;j++) {
+      if((i+j)%2 == 0) {
+        white += cols[i] * rows[j];
+      }else if ((i+j)%2 != 0) {
+        black += cols[i] * rows[j];
+      }
+    }
+  }
+  arr.push(white,black);
+  return arr;
+}
