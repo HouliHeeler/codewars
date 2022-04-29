@@ -899,3 +899,20 @@ function productFib(prod){
     }
   }
 }
+
+//Confirm whether a given string contains all the letters of another given string
+
+function scramble(str1, str2) {
+  let arrOne = str1.split("");
+	let arrTwo = str2.split("");
+  let arr = [];
+	for(i=0;i<str2.length;i++) {
+    if(arrOne.includes(arrTwo[i])) {
+      arr.push(arrOne.splice(arrOne.indexOf(arrTwo[i]),1));
+    }
+  }
+  if(arr.join("") == str2) {
+    return true
+  } else 
+    return false
+}
