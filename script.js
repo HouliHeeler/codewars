@@ -875,3 +875,27 @@ function anagrams(word, words) {
   }
   return arr;
 }
+
+//Test if given number is the product of two given Fibonacci numbers
+
+function productFib(prod){
+  let arr = [0,1];
+  let x;
+  let ans = [];
+  for(i=2;i<prod;i++) {
+    x = (arr[i-1] + arr[i-2]);
+    arr.push(x);
+    if(x > prod) {
+      break;
+    }
+  }
+  for(j=0;j<arr.length;j++) {
+    if(arr[j] * arr[j+1] == prod) {
+      ans.push(arr[j],arr[j+1],true);
+      return ans;
+    } else if (arr[j] * arr[j+1] > prod) {
+      ans.push(arr[j],arr[j+1],false);
+      return ans;
+    }
+  }
+}
