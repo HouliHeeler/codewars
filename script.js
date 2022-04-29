@@ -851,3 +851,27 @@ function whiteBlackAreas(cols, rows) {
   arr.push(white,black);
   return arr;
 }
+
+//Tribonacci Sequence
+
+function tribonacci(sig,n) {
+  while(sig.length < n) {
+  	sig.push(sig[sig.length-1] + sig[sig.length-2] + 	sig[sig.length-3]);
+  }
+  sig.splice(n,(3-n));
+  return sig;
+}
+
+//Find anagrams from given array
+
+function anagrams(word, words) {
+  let arr = [];
+  let sorted = word.split("").sort().join("");
+  console.log(sorted);
+  for(i=0;i<words.length;i++) {
+    if(sorted == words[i].split("").sort().join("")) {
+      arr.push(words[i]);
+    }
+  }
+  return arr;
+}
