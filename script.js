@@ -916,3 +916,14 @@ function scramble(str1, str2) {
   } else 
     return false
 }
+
+//Return the number of times a given number can return into the sum of the algorithm
+
+function digPow(n, p){
+  let arr = n.toString().split("");
+  let num = 0
+  for(i=0;i<arr.length;i++) {
+    num += arr[i] ** (p+i);
+  }
+  return num%n === 0 ? (num/n) : -1;
+}
