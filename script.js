@@ -927,3 +927,14 @@ function digPow(n, p){
   }
   return num%n === 0 ? (num/n) : -1;
 }
+
+//Return missing letter from given array
+
+function findMissingLetter(array) {
+  let newArray = array.map(el => el.charCodeAt());
+  for(i=1;i<newArray.length;i++) {
+    if(newArray[i] != (newArray[i-1]+1)) {
+      return String.fromCharCode(newArray[i] - 1);
+    }
+  }
+}
