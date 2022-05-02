@@ -938,3 +938,16 @@ function findMissingLetter(array) {
     }
   }
 }
+
+//Calculate how many recipes can be fulfilled with available ingredients
+
+function cakes(recipe, available) {
+  let ans;
+  for(const ingredients in recipe) {
+    if(available[ingredients]/recipe[ingredients] < ans || ans == undefined) {
+      ans = (available[ingredients]/recipe[ingredients]);
+    }else if(available[ingredients] == undefined)
+      return 0;
+  }
+  return Math.floor(ans);
+}
