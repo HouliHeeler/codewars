@@ -951,3 +951,17 @@ function cakes(recipe, available) {
   }
   return Math.floor(ans);
 }
+
+//Break camelCase
+
+// complete the function
+function solution(string) {
+  let arr = string.split("");
+  for(i=1;i<arr.length;i++) {
+    if(arr[i].toUpperCase() === arr[i] && arr[i-1].toLowerCase() === arr[i-1]) {
+      arr.splice(i,0," ");
+      i++;
+    }
+  }
+  return arr.join("");
+}
