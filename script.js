@@ -965,3 +965,18 @@ function solution(string) {
   }
   return arr.join("");
 }
+
+//Encode given string with Rot13 cipher
+
+function rot13(message){
+  let arr = message.split("").map(char => char.charCodeAt());
+  for(i=0;i<arr.length;i++) {
+    if(arr[i] >= 65 && arr[i] <= 77 || arr[i] >= 97 && arr[i] <= 109) {
+    	arr.splice(i,1,String.fromCharCode(arr[i]+13))
+    }else if(arr[i] >= 78 && arr[i] <= 90 || arr[i] >= 110 && arr[i] <= 122) {
+      arr.splice(i,1,String.fromCharCode(arr[i]-13))
+    }else 
+      arr.splice(i,1,String.fromCharCode(arr[i]));
+  }
+  return arr.join("");
+}
