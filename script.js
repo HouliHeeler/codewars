@@ -980,3 +980,16 @@ function rot13(message){
   }
   return arr.join("");
 }
+
+//Convert PascalCase to snake_case
+
+function toUnderscore(string) {
+	let arr = string.toString().split("");
+  for(i=1;i<arr.length;i++) {
+    if(arr[i] === arr[i].toUpperCase() && arr[i].match(/[a-z]/i)) {
+      arr.splice((i),0,"_");
+      i++;
+    }
+  }
+  return arr.join("").toLowerCase();
+}
