@@ -1000,3 +1000,18 @@ function sumTwoSmallestNumbers(numbers) {
   let sorted = numbers.sort((a,b) => a - b)
   return sorted[0] + sorted[1]
 }
+
+//Confirm given PIN is useable
+
+function validatePIN (pin) {
+  if(pin.indexOf('\n') > -1) {
+    return false;
+  }
+  let arr = pin.split("");
+  for(i=0;i<arr.length;i++) {
+    if(isNaN(arr[i]) || arr[i] < 0) {
+      return false
+    }
+  }
+  return (arr.length === 4 || arr.length === 6) ? true : false;
+}
