@@ -993,3 +993,10 @@ function toUnderscore(string) {
   }
   return arr.join("").toLowerCase();
 }
+
+//Return sum of two lowest numbers in given array
+
+function sumTwoSmallestNumbers(numbers) {  
+  let sorted = numbers.sort((a,b) => a - b)
+  return sorted[0] + sorted[1]
+}
