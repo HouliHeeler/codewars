@@ -1015,3 +1015,16 @@ function validatePIN (pin) {
   }
   return (arr.length === 4 || arr.length === 6) ? true : false;
 }
+
+//Alphabetize while capitalizing the first of any specific character
+
+function findChildren(dancingBrigade) {
+	let arr = dancingBrigade.toLowerCase().split("").sort()
+  arr[0] = arr[0].toUpperCase();
+  for(i=1;i<arr.length;i++) {
+    if(arr[i].toUpperCase() != arr[i-1].toUpperCase()) {
+    	arr[i] = (arr[i].toUpperCase())
+    }
+  }
+  return arr.join("");
+}
