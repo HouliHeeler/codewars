@@ -1028,3 +1028,9 @@ function findChildren(dancingBrigade) {
   }
   return arr.join("");
 }
+
+//Return highest and lowest values in array 
+
+function minMax(arr){
+  return [Math.min(...arr),Math.max(...arr)]
+}
