@@ -1034,3 +1034,17 @@ function findChildren(dancingBrigade) {
 function minMax(arr){
   return [Math.min(...arr),Math.max(...arr)]
 }
+
+//Merge two sorted lists
+
+function mergeSorted(list1,list2) {
+  let ans = [];
+  let mergedLength = list1.length + list2.length;
+  while(ans.length < mergedLength) {
+    if(list1[0] <= list2[0]) {
+      ans.push(list1.splice(0,1));
+    }else 
+      ans.push(list2.splice(0,1))
+  }
+  return ans;
+}
