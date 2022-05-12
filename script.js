@@ -1054,3 +1054,13 @@ function mergeSorted(list1,list2) {
 function lovefunc(flower1, flower2){
   return (flower1%2 !== flower2%2)
 }
+
+//Return all powers of 2 from 0 to given number
+
+function powersOfTwo(n){
+  let ans = []
+  for(i=0;i<=n;i++) {
+    ans.push(Math.pow(2,i))
+  }
+  return ans
+}
