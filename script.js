@@ -1048,3 +1048,9 @@ function mergeSorted(list1,list2) {
   }
   return ans;
 }
+
+//Return true if one flower has even and one flower has odd number of petals
+
+function lovefunc(flower1, flower2){
+  return (flower1%2 !== flower2%2)
+}
