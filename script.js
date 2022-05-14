@@ -1081,3 +1081,15 @@ var maxSequence = function(arr){
   }
   return maxSum
 }
+
+//Calculate when population will exceed a given target based on parameters given
+
+function nbYear(p0, percent, aug, p) {
+  let count = 0
+  let pop = p0
+  while(pop < p) {
+    pop += Math.floor(pop * (percent/100)) + aug
+    count++
+  }
+    return count
+}
