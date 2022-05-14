@@ -1093,3 +1093,16 @@ function nbYear(p0, percent, aug, p) {
   }
     return count
 }
+
+//Find two numbers in given array that add up to given target
+
+function twoSum(numbers, target) {
+  let sum = 0
+  for(i=0;i<numbers.length;i++) {
+    for(j=(i+1);j<numbers.length;j++) {
+      if(numbers[i] + numbers[j] === target) {
+        return [i,j]
+      }
+    }
+  }
+}
