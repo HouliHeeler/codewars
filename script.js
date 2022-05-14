@@ -1106,3 +1106,22 @@ function twoSum(numbers, target) {
     }
   }
 }
+
+//Convert given string to Title Case, skipping words in secondary string
+
+function titleCase(title, minorWords) {
+  let arr = title.split(" ")
+  arr[0] = arr[0][0].toUpperCase() + arr[0].substring(1).toLowerCase()
+  if(minorWords != undefined) {
+  	let wordsArr = minorWords.toLowerCase().split(" ")
+  	for(i=0;i<arr.length;i++) {
+    	if(wordsArr.includes(arr[i].toLowerCase()) && i != 0) {
+        arr.splice(i,1,arr[i].toLowerCase())
+      	continue;
+    	}else
+      	arr.splice(i,1,arr[i][0].toUpperCase() + arr[i].substring(1).toLowerCase())
+  	}
+    return arr.join(" ")
+  }else 
+    return arr.map(word => word[0].toUpperCase() + word.substring(1).toLowerCase()).join(" ")
+}
