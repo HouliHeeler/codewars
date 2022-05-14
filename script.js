@@ -1064,3 +1064,20 @@ function powersOfTwo(n){
   }
   return ans
 }
+
+//Return maximum subarray from given array
+
+var maxSequence = function(arr){
+  let maxSum = 0;
+  let currentSum = 0;
+	if((arr.filter(num => num >= 0)).length == 0) {
+    return 0
+  }else if((arr.filter(num => num >= 0)).length == arr.length) {
+    return arr.reduce((a,b) => a + b)
+  }
+  for(i=0;i<arr.length;i++) {
+  	currentSum = Math.max(arr[i], currentSum + arr[i]);
+    maxSum = Math.max(currentSum, maxSum)
+  }
+  return maxSum
+}
