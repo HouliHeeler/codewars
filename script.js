@@ -1125,3 +1125,21 @@ function titleCase(title, minorWords) {
   }else 
     return arr.map(word => word[0].toUpperCase() + word.substring(1).toLowerCase()).join(" ")
 }
+
+//Count smileys in given array
+
+function countSmileys(arr) {
+	let count = 0;
+  for(i=0;i<arr.length;i++) {
+    if(arr[i][0] == ":" || arr[i][0] == ";") {
+      if(arr[i][1] == "D" || arr[i][1] == ")") {
+      	count++
+      }else if(arr[i][1] == "-" || arr[i][1] == "~") {
+        if(arr[i][2] == "D" || arr[i][2] == ")") {
+          count++
+        }
+      }
+    }
+  }
+  return count
+}
