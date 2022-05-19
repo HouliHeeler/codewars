@@ -1153,3 +1153,11 @@ var countSheep = function (num){
   }
   return str
 }
+
+//Return sum of digits in given number
+
+function sumDigits(number) {
+  return Math.abs(number).toString()
+                         .split("")
+                         .reduce((a,b) => Number(a) + Number(b), 0)
+}
