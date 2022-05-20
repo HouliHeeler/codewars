@@ -1181,7 +1181,7 @@ function count (string) {
 
 function switchItUp(number){
   const nums = {
-    0 : "Zero"
+    0 : "Zero",
     1 : "One",
     2 : "Two",
     3 : "Three",
@@ -1193,4 +1193,25 @@ function switchItUp(number){
     9 : "Nine"
   }
   return nums[number]
+}
+
+//Only show elements in array up to given 'n' times
+
+function deleteNth(arr,n){
+  const obj = {}
+  const ans = []
+  for(i=0;i<arr.length;i++) {
+  	if(!obj.hasOwnProperty(`${arr[i]}`)) {
+      obj[arr[i]] = 1
+      ans.push(arr[i])
+      console.log(ans, i)
+    } else {
+      obj[arr[i]] += 1
+    	if(obj[arr[i]] <= n) {
+        ans.push(arr[i])
+        console.log(ans, i, obj[arr[i]])
+      }
+    }
+  }
+  return ans
 }
