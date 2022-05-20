@@ -1161,3 +1161,18 @@ function sumDigits(number) {
                          .split("")
                          .reduce((a,b) => Number(a) + Number(b), 0)
 }
+
+//Count number of each character in given string
+
+function count (string) {  
+  let arr = string.split("")
+  let obj = {}
+  for(i=0;i<arr.length;i++) {
+    if(!obj.hasOwnProperty(`${arr[i]}`)) {
+      obj[arr[i]] = 1
+    }else {
+      obj[arr[i]] += 1
+    }
+  }
+  return obj
+}
