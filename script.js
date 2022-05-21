@@ -1215,3 +1215,15 @@ function deleteNth(arr,n){
   }
   return ans
 }
+
+//Return all numbers in given range that when split and multiplied by the power of their string position add up to the initial value
+
+function sumDigPow(a, b) {
+  ans = []
+  for(i=a;i<=b;i++) {
+    if(i.toString().split("").map((num, ind) => num ** (ind + 1)).reduce((a,b) => a + b) == i) {
+      ans.push(i)
+    }
+  }
+  return ans
+}
