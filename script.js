@@ -1234,3 +1234,23 @@ function cornerCircle(r) {
   let ans = r * (3 - (2 * Math.SQRT2))
   return Math.round( ans * 100 + Number.EPSILON ) / 100
 }
+
+//Build a tower
+
+function towerBuilder(n) {
+  let space = ' '
+  let asterisk = '*'
+  let count = 1
+  let floor = n - 1
+  let ans = []
+  for(i=1;i<=n;i++) {
+    if(i == n) {
+      ans.push(`${asterisk.repeat(count)}`)
+    }else {
+      ans.push(`${space.repeat(floor)}${asterisk.repeat(count)}${space.repeat(floor)}`)
+      count += 2
+      floor -= 1
+    }
+  }
+  return ans
+}
