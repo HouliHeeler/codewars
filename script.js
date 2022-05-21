@@ -1227,3 +1227,10 @@ function sumDigPow(a, b) {
   }
   return ans
 }
+
+//Find the radius of the largest circle that can fit in the space created by a larger circle in a corner(Hard to explain without diagram)
+
+function cornerCircle(r) {
+  let ans = r * (3 - (2 * Math.SQRT2))
+  return Math.round( ans * 100 + Number.EPSILON ) / 100
+}
