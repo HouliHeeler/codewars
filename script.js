@@ -1265,3 +1265,20 @@ function dataReverse(data) {
   }
   return ans
 }
+
+//Test password for length, Uppercase, Lowercase, and numberical characters
+
+function validate(password) {
+  const array = password.split("")
+  const longEnough = (password.length >= 6)
+  const lowerCase = array.filter(el => el == el.toLowerCase() && el.match(/[a-z]/i))
+  const upperCase = array.filter(el => el == el.toUpperCase() && el.match(/[a-z]/i))
+  const num = array.filter(el => el == el.match(/[0-9]/i))
+  const containsLower = (lowerCase.length >= 1)
+  const containsUpper = (upperCase.length >= 1)
+  const containsNum = (num.length >= 1)
+  if(longEnough && containsLower && containsUpper && containsNum) {
+    return true
+  } else
+    return false
+}
