@@ -1254,3 +1254,14 @@ function towerBuilder(n) {
   }
   return ans
 }
+
+//Reverse given data in 8-bit segments
+
+function dataReverse(data) {
+  let ans = []
+  while(data.length > 0) {
+    ans.push(data[data.length - 8],data[data.length - 7],data[data.length - 6],data[data.length - 5],data[data.length - 4],data[data.length - 3],data[data.length - 2],data[data.length - 1])
+    data.splice(data.length-8,8)
+  }
+  return ans
+}
