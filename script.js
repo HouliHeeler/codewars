@@ -1282,3 +1282,24 @@ function validate(password) {
   } else
     return false
 }
+
+//Return a diamond of the given size
+
+function diamond(n){
+  if(n%2==0 || n < 0) {
+    return null
+  }
+  const asterisk = '*'
+  const space = ' '
+  let diam = [`${asterisk.repeat(n)}\n`]
+  let row = 1
+  let spaces = Math.floor(n/2)
+  for(i=1;i<=Math.floor(n/2);i++) {    		
+    diam.splice(i,0,`${space.repeat(spaces)}${asterisk.repeat(row)}\n`)
+    diam.splice(i-1,0,`${space.repeat(spaces)}${asterisk.repeat(row)}\n`)
+		row+=2
+    spaces--
+  }
+  diam.unshift('\n')
+  return diam.join("")
+}
