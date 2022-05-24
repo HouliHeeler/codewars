@@ -1303,3 +1303,24 @@ function diamond(n){
   diam.unshift('\n')
   return diam.join("")
 }
+
+//Find the longest concatenation of given "k" amount of strings
+
+function longestConsec(strarr, k) {
+	if(k > strarr.length || k <= 0) {
+    return ""
+  }
+  let arr = strarr.map(el => el.length)
+  let current = "";
+  let max = "";
+  let ans = 0;
+  for(i=0;i<strarr.length;i++) {
+    let newStrArr = [...arr]
+    current = newStrArr.splice(i,k).reduce((a,b) => a + b)
+    if(current > max) {
+      max = current
+      ans = i
+    }
+  }
+  return strarr.splice(ans,k).reduce((a,b) => a + b)
+}
