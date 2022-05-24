@@ -1324,3 +1324,17 @@ function longestConsec(strarr, k) {
   }
   return strarr.splice(ans,k).reduce((a,b) => a + b)
 }
+
+//Return year that investment will exceed desired total
+
+function calculateYears(principal, interest, tax, desired) {  
+  let earnings;
+  let count = 0
+  while(principal < desired) {
+    earnings = principal * interest
+    principal += earnings
+    principal -= tax * earnings
+    count++
+  }
+  return count
+}
