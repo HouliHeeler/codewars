@@ -1209,7 +1209,6 @@ function deleteNth(arr,n){
       obj[arr[i]] += 1
     	if(obj[arr[i]] <= n) {
         ans.push(arr[i])
-        console.log(ans, i, obj[arr[i]])
       }
     }
   }
@@ -1337,4 +1336,30 @@ function calculateYears(principal, interest, tax, desired) {
     count++
   }
   return count
+}
+
+//Help bookseller tally his stock
+
+function stockList(listOfArt, listOfCat){
+  const objList = {}
+  let temp;
+  let ans = [];
+  for(i=0;i<listOfArt.length;i++) {
+    temp = listOfArt[i].split(" ")
+    if(!objList.hasOwnProperty(temp[0][0])) {
+      objList[temp[0][0]] = Number(`${temp[1]}`)
+    }else
+      objList[temp[0][0]] += Number(`${temp[1]}`)
+  }
+  if(Object.values(objList).filter(num => num > 0).length === 0) {
+    return ""
+  }else {
+  	for(i=0;i<listOfCat.length;i++) {
+    	if(objList[listOfCat[i]] == undefined) {
+      	ans.push(`(${listOfCat[i]} : 0)`)
+    	}else
+    		ans.push(`(${listOfCat[i]} : ${objList[listOfCat[i]]})`)
+  	}
+  }
+  return ans.join(" - ")
 }
