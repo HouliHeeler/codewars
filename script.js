@@ -1363,3 +1363,19 @@ function stockList(listOfArt, listOfCat){
   }
   return ans.join(" - ")
 }
+
+//Capitalize and return meetings sorted by last name
+
+function meeting(s) {
+  let ans = []
+  const arr = s.toUpperCase()
+               .split(";")
+               .map(name => name.split(":"))
+               .map(name => name.reverse())
+               .sort()
+               .map(name => name.reverse())
+  for(i=0;i<arr.length;i++) {
+    ans.push(`(${arr[i][1]}, ${arr[i][0]})`)
+  }
+  return ans.join("")
+}
