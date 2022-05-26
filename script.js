@@ -1379,3 +1379,17 @@ function meeting(s) {
   }
   return ans.join("")
 }
+
+//Return max product of two adjacent numbers in given array
+
+function adjacentElementsProduct(array) {
+  let current = array[0] * array[1]
+  let max = current;
+  for(i=1;i<array.length - 1;i++) {
+    current = array[i] * array[i + 1]
+    if(current > max) {
+      max = current
+    }
+  }
+  return max
+}
