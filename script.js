@@ -1393,3 +1393,33 @@ function adjacentElementsProduct(array) {
   }
   return max
 }
+
+//Return all given fractions reduced to lowest common denominator
+
+function convertFrac(lst){
+  if(lst.length == 0) {
+    return ""
+  }
+  let temp = []
+  let ans = []
+  for(i=0;i<lst.length;i++) {
+    temp.push(lst[i][1])
+  }
+  let denom = temp.reduce((a,b) => a * b)
+  for(i=Math.max(...temp);i<=denom;i++) {
+    let arr = []
+    for(j=0;j<temp.length;j++) {
+    	if(i%temp[j] == 0) {
+        arr.push(i)
+      }
+    }
+    if(arr.length == temp.length) {
+      denom = arr[0]
+      break
+    }
+  }
+  for(i=0;i<lst.length;i++) {
+    ans.push(`(${lst[i][0]*denom/lst[i][1]},${denom})`)
+  }
+  return ans.join("")
+}
