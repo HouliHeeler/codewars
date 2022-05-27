@@ -1434,3 +1434,23 @@ function overTheRoad(address, n){
   }else
   	return Math.ceil((1-(address/lastOddHouse)) * lastEvenHouse) + 1
 }
+
+//Create a formula to solve when enough money will be saved for a new car
+
+function nbMonths(startPriceOld, startPriceNew, savingperMonth, percent) {
+  if(startPriceOld >= startPriceNew) {
+    return [0,startPriceOld - startPriceNew]
+  }
+  let savings = 0
+  let months = 0
+  while(savings + startPriceOld <= startPriceNew) {
+    months++
+    savings += savingperMonth
+    if(months%2 === 0) {
+      percent += 0.5
+    }
+    startPriceOld = startPriceOld * ((100 - percent)/100)
+    startPriceNew = startPriceNew * ((100 - percent)/100)
+  }
+  return [months, Math.round((savings + startPriceOld) - startPriceNew)]
+}
