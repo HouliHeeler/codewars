@@ -1423,3 +1423,14 @@ function convertFrac(lst){
   }
   return ans.join("")
 }
+
+//Find opposite house number
+
+function overTheRoad(address, n){
+  const lastEvenHouse = n * 2
+  const lastOddHouse = (n * 2) - 1
+  if(address%2 == 0) {
+    return Math.ceil((1-(address/lastEvenHouse)) * lastOddHouse) + 1
+  }else
+  	return Math.ceil((1-(address/lastOddHouse)) * lastEvenHouse) + 1
+}
