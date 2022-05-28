@@ -1467,3 +1467,24 @@ var findDigit = function(num, nth){
     return Number(newNum[newNum.length - nth])
   }
 }
+
+//Return most common number in given array
+
+function highestRank(arr){
+	const obj = {}
+  let mode =0;
+  let number = 0;
+  for(i=0;i<arr.length;i++) {
+    if(!obj[arr[i]]) {
+      obj[arr[i]] = 1
+    }else 
+      obj[arr[i]] += 1
+  }
+  for(let num in obj) {
+    if(obj[num] >= mode && Number(num) > number) {
+      mode = obj[num]
+      number = num
+    }
+  }
+  return Number(number)
+}
