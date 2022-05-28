@@ -1454,3 +1454,16 @@ function nbMonths(startPriceOld, startPriceNew, savingperMonth, percent) {
   }
   return [months, Math.round((savings + startPriceOld) - startPriceNew)]
 }
+
+//Return the nth digit of a given number read right to left
+
+var findDigit = function(num, nth){
+  if(nth < 1) {
+    return -1
+  }else if (nth > Math.abs(num).toString().length || nth === undefined) {
+    return 0
+  }else {
+    const newNum = Math.abs(num).toString()
+    return Number(newNum[newNum.length - nth])
+  }
+}
