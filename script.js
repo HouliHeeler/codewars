@@ -1488,3 +1488,18 @@ function highestRank(arr){
   }
   return Number(number)
 }
+
+//Remove requested amount of ! from string from left to right
+
+function remove(s,n){
+  let count = 0
+  let arr = s.split("")
+  for(i=0;i<arr.length;i++) {
+    if(arr[i] == '!' && count < n) {
+      arr.splice(i,1)
+      count++
+      i--
+    }
+  }
+  return arr.join("")
+}
