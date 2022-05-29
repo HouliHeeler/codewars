@@ -1521,3 +1521,16 @@ function menFromBoys(arr){
   ans.push(...evenSet,...oddSet)
   return ans
 }
+
+//Find maximum difference between lengths of strings in two arrays
+
+function mxdiflg(a1, a2) {
+  if(a1.length < 1 || a2.length < 1) {
+    return -1
+  }
+  const maxA = (a1.map(el => el.length).sort((a,b) => b - a))[0]
+  const minA = (a1.map(el => el.length).sort((a,b) => a - b))[0]
+  const maxB = (a2.map(el => el.length).sort((a,b) => b - a))[0]
+  const minB = (a2.map(el => el.length).sort((a,b) => a - b))[0]
+  return maxA - minB > maxB - minA ? maxA - minB : maxB - minA
+}
