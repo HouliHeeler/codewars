@@ -1503,3 +1503,21 @@ function remove(s,n){
   }
   return arr.join("")
 }
+
+//Return given array sorted with even numbers ascending followed by odd numbers descending with no duplicates
+
+function menFromBoys(arr){
+  let ans = []
+  let even = []
+  let odd = []
+  for(i=0;i<arr.length;i++) {
+    if(arr[i]%2 == 0) {
+      even.push(arr[i])
+    }else
+      odd.push(arr[i])
+  }
+  const evenSet = new Set(even.sort((a,b) => a - b))
+  const oddSet = new Set(odd.sort((a,b) => b - a))
+  ans.push(...evenSet,...oddSet)
+  return ans
+}
