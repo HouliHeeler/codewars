@@ -1559,3 +1559,15 @@ function count(array){
   }
   return ans
 }
+
+//Return largest average speed rounded down
+
+function gps(s, x) {
+  let max = 0
+  for(i=0;i<x.length - 1;i++) {
+    if((x[i+1] - x[i]) > max) {
+      max = (x[i+1] - x[i])
+    }
+  }
+  return Math.floor(max * (3600/s))
+}
