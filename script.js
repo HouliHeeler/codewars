@@ -1534,3 +1534,15 @@ function mxdiflg(a1, a2) {
   const minB = (a2.map(el => el.length).sort((a,b) => a - b))[0]
   return maxA - minB > maxB - minA ? maxA - minB : maxB - minA
 }
+
+//Remove duplicates of array, leaving last instances of number
+
+function solve(arr) {
+  for(i=arr.length-1;i>=0;i--) {
+    if(i != arr.lastIndexOf(arr[i])) {
+      arr.splice(i,1)
+      i++
+    }
+  }
+  return arr
+}
