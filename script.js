@@ -1546,3 +1546,16 @@ function solve(arr) {
   }
   return arr
 }
+
+//Count instances of elements in given array
+
+function count(array){
+  let ans = {}
+  for(i=0;i<array.length;i++) {
+    if(!ans[array[i]]) {
+      ans[array[i]] = 1
+    }else
+      ans[array[i]] += 1
+  }
+  return ans
+}
