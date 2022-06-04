@@ -1628,3 +1628,24 @@ function sumPairs(ints, s) {
   }
   return pairs.length == 0 ? undefined : pairs
 }
+
+//Count size of fish in pond after eating smaller or equal sized fish
+
+function fish(shoal){
+  let count = 0;
+  let size = 1
+  let growth = 4
+  let school = shoal.split("").sort()
+  for(i=0;i<school.length;i++) {
+    if(size >= school[i]) {
+      count += Number(school[i])
+      if(count >= growth) {
+        size++
+        growth += size * 4
+      }
+    }else{
+      break
+    }
+  }
+  return size
+}
