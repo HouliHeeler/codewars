@@ -1597,3 +1597,15 @@ function divCon(x){
   const sumNum = x.filter(num => typeof num == "number").reduce((a,b) => a + b, 0)
   return sumNum - sumString
 }
+
+//Discover whether given number is 'Tidy'
+
+function tidyNumber(n){
+  const arr = n.toString().split("")
+  for(i=1;i<arr.length;i++) {
+    if(arr[i] < arr[i-1]) {
+      return false
+    }
+  }
+  return true
+}
