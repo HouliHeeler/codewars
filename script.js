@@ -1571,3 +1571,21 @@ function gps(s, x) {
   }
   return Math.floor(max * (3600/s))
 }
+
+//Return array of numbers that are greater than the sum of every given number to the right of them
+
+function arrayLeaders(numbers){
+  const ans = []
+  let temp;
+  let arr = []
+  for(i=0;i<numbers.length;i++) {
+    arr = [...numbers]
+    if(i < numbers.length - 1) {
+    temp = arr.slice(i+1, numbers.length).reduce((a,b) => a + b)
+    }
+    if(arr[i] > temp || (i == numbers.length - 1 && arr[i] > 0)) {
+      ans.push(arr[i])
+    }
+  }
+  return ans
+}
