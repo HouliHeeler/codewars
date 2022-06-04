@@ -1589,3 +1589,11 @@ function arrayLeaders(numbers){
   }
   return ans
 }
+
+//Subtract sum of 'string' numbers from sum of numbers in given array
+
+function divCon(x){
+  const sumString = x.filter(num => typeof num == "string").map(num => Number(num)).reduce((a,b) => a + b, 0)
+  const sumNum = x.filter(num => typeof num == "number").reduce((a,b) => a + b, 0)
+  return sumNum - sumString
+}
