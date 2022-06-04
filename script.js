@@ -1609,3 +1609,22 @@ function tidyNumber(n){
   }
   return true
 }
+
+//Return pair in array that adds up to given sum
+
+function sumPairs(ints, s) {
+  let pairs = [];
+  let temp = ints.length;
+  let remainder = 0;
+  let position = 0;
+  for(i=0;i<ints.length-1;i++) {
+    remainder = s - ints[i]
+    position = ints.indexOf(remainder, (i + 1))
+    if(position >= 0 && position < temp) {
+      temp = position
+      pairs = []
+      pairs.push(ints[i], ints[position])
+    }
+  }
+  return pairs.length == 0 ? undefined : pairs
+}
