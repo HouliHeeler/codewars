@@ -1649,3 +1649,19 @@ function fish(shoal){
   }
   return size
 }
+
+//Return mature pairs of rabbits given birth rate and month count
+
+function fib_rabbits(n, b) {
+  let month = 0;
+  let imPairs = 1;
+  let matPairs = 0;
+  let temp = 0;
+  while(month < n) {
+    temp = imPairs
+    imPairs = (matPairs * b);
+    matPairs += temp;
+    month++
+  }
+  return matPairs
+}
