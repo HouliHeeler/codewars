@@ -1665,3 +1665,17 @@ function fib_rabbits(n, b) {
   }
   return matPairs
 }
+
+//Return next smallest number with given digits
+
+function nextSmaller(n) {
+  let arr = n.toString().split("")
+  let temp = 0
+  for(i=n - 1;i>=(10 ** (arr.length - 1));i--) {
+    temp = i.toString().split("")
+    if(temp.sort((a,b) => a - b).join("") == arr.sort((a,b) => a - b).join("")) {
+      return i
+    }
+  }
+  return -1
+}
