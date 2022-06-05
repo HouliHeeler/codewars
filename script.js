@@ -1679,3 +1679,12 @@ function nextSmaller(n) {
   }
   return -1
 }
+
+//Return whether a given number is a disarium or not
+
+function disariumNumber(n){
+  return Number(n.toString()
+                 .split("")
+                 .map((num,i) => num ** (i+1))
+                 .reduce((a,b) => a + b)) == n ? "Disarium !!" : "Not !!"
+}
