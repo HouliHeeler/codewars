@@ -1688,3 +1688,21 @@ function disariumNumber(n){
                  .map((num,i) => num ** (i+1))
                  .reduce((a,b) => a + b)) == n ? "Disarium !!" : "Not !!"
 }
+
+//Entry level sudoku solver with 1 missing number per row
+
+function sudokuer(puzzle) {
+  let ordered = [];
+  let missing = []
+  for(i=0;i<puzzle.length;i++) {
+    missing = []
+    ordered = [...puzzle[i]].sort()
+   	for(j=1;j<=ordered.length;j++) {
+      if(!ordered.includes(j)) {
+        missing.push(j)
+      }
+    }
+    puzzle[i].splice(puzzle[i].indexOf(0),1,missing[0])
+  }
+  return puzzle
+}
