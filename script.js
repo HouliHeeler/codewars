@@ -1706,3 +1706,29 @@ function sudokuer(puzzle) {
   }
   return puzzle
 }
+
+//Script a supermarket queue with given till number and wait time array
+
+function queueTime(customers, n) {
+  if(customers.length == 0) {
+    return 0
+  }
+  if(n == 1) {
+    return customers.reduce((a,b) => a + b)
+  }
+  if(n > customers.length) {
+    return Math.max(...customers)
+  }
+  let arr = [...Array(n).keys()].fill(0)
+  const time = [...Array(n).keys()].fill(0)
+  while(customers.length > 0) {
+    for(i=0;i<arr.length;i++) {
+      if(arr[i] == Math.min(...arr) && customers.length > 0) {
+      	arr = arr.map(customer => customer - arr[i])
+        arr[i] = customers.shift()
+        time[i] += arr[i]
+      }
+    }
+  }
+  return Math.max(...time)
+}
