@@ -1732,3 +1732,14 @@ function queueTime(customers, n) {
   }
   return Math.max(...time)
 }
+
+//Return sum of numbers that are odd once cubed
+
+function cubeOdd(arr) {
+  if(arr.length == 0 || arr.filter(el => isNaN(el)).length != 0) {
+    return undefined
+  }else {
+    const ans = arr.map(num => num ** 3).filter(num => num%2 != 0)
+    return ans.length > 0 ? ans.reduce((a,b) => a + b) : 0
+	}
+}
