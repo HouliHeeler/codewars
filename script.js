@@ -1743,3 +1743,16 @@ function cubeOdd(arr) {
     return ans.length > 0 ? ans.reduce((a,b) => a + b) : 0
 	}
 }
+
+//Create a multiplication grid of given size
+
+multiplicationTable = function(size) {
+  let arr = [...Array(size).keys()].map(num => ++num)
+  let temp = []
+  const ans = []
+  for(i=1;i<=size;i++) {
+  	temp = [...arr].map(num => num * i)
+    ans.push(temp)
+  }
+  return ans
+}
