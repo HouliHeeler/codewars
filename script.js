@@ -1756,3 +1756,15 @@ multiplicationTable = function(size) {
   }
   return ans
 }
+
+//Capitalize string based on given array of indices
+
+function capitalize(s,arr){
+  let split = s.split("")
+  for(i=0;i<arr.length;i++) {
+    if(arr[i] < s.length) {
+    	split[arr[i]] = s[arr[i]].toUpperCase()
+    }
+  }
+  return split.join("")
+};
