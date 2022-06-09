@@ -1786,3 +1786,16 @@ function stat(strg) {
   const median = ordered[Math.floor(ordered.length/2)]
   return `Range: ${Math.floor(range/3600)}|${Math.floor((range%3600)/60)}|${Math.floor((range%3600)%60)} Average: ${Math.floor(average/3600)}|${Math.floor((average%3600)/60)}|${Math.floor((average%3600)%60)} Median: ${Math.floor(median/3600)}|${Math.floor((median%3600)/60)}|${Math.floor((median%3600)%60)}`
 }
+
+//Return sum of triangular numbers
+
+function sumTriangularNumbers(n) {
+  temp = 0
+  sum = 0
+  for(i=0;i<n;i++) {
+    temp += (1 + i)
+    sum += temp
+    console.log(temp, sum)
+  }
+  return sum
+}
