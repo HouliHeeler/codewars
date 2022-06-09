@@ -1768,3 +1768,21 @@ function capitalize(s,arr){
   }
   return split.join("")
 };
+
+//Provide median, average, and range of times in array
+
+function stat(strg) {
+	const arr = strg.split(",").map(item => item.trim())
+  let ans = arr.map(item => item.split("|"))
+  for(i=0;i<ans.length;i++) {
+    ans[i][0] = Number(ans[i][0]) * 3600
+    ans[i][1] = Number(ans[i][1]) * 60
+    ans[i][2] = Number(ans[i][2])
+    ans[i] = ans[i].reduce((a,b) => a + b)
+  }
+  const ordered = [...ans].sort((a,b) => a - b)
+  const range = ordered[ordered.length - 1] - ordered[0]
+  const average = ([...ans].reduce((a,b) => a + b))/ans.length
+  const median = ordered[Math.floor(ordered.length/2)]
+  return `Range: ${Math.floor(range/3600)}|${Math.floor((range%3600)/60)}|${Math.floor((range%3600)%60)} Average: ${Math.floor(average/3600)}|${Math.floor((average%3600)/60)}|${Math.floor((average%3600)%60)} Median: ${Math.floor(median/3600)}|${Math.floor((median%3600)/60)}|${Math.floor((median%3600)%60)}`
+}
