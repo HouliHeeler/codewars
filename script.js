@@ -1813,3 +1813,21 @@ function partlist(arr) {
   }
   return ans
 }
+
+//Queue of beggars
+
+function beggars(values, n){
+  let ans = [...Array(n).keys()].fill(0);
+ 	if(ans.length == 0) {
+    return ans
+  }
+  let count = 0;
+  while(values.length > 0) {
+    ans[count] += Number(values.splice(0,1))
+    count++
+    if(count >= ans.length) {
+      count = 0
+    }
+  }
+  return ans
+}
