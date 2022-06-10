@@ -1843,3 +1843,23 @@ function strong(n) {
   }
   return sum == n ? "STRONG!!!!" : "Not Strong!!"
 }
+
+//Find longest string of vowels
+
+function solve(s){
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  const arr = s.split("")
+  let max = 0;
+  let current = 0;
+  for(i=0;i<arr.length;i++) {
+    if(vowels.includes(arr[i])) {
+      current++
+    }else {
+      if(current > max) {
+        max = current
+      }
+      current = 0
+    }
+  }
+  return max
+ }
