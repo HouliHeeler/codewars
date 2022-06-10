@@ -1882,3 +1882,18 @@ function solve(s){
   }
   return max
 };
+
+//How many pairs of gloves are there?
+
+function numberOfPairs(gloves){
+  const sorted = [...gloves].sort()
+  let pairs = 0
+  for(i=0;i<sorted.length;i++) {
+    if(sorted[i] == sorted[i+1]) {
+      pairs++
+      sorted.splice(i,2)
+      i--
+    }
+  }
+  return pairs
+}
