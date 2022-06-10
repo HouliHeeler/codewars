@@ -1863,3 +1863,22 @@ function solve(s){
   }
   return max
  }
+
+ //Sum of substrings of consonants in a row based on position in alphabet
+
+ function solve(s) {
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  let max = 0
+  let current = 0
+  const arr = s.split("")
+  for(i=0;i<arr.length;i++) {
+    if(!vowels.includes(arr[i])) {
+      current += (arr[i].charCodeAt(0) - 96)
+      if(current > max) {
+        max = current
+      }
+    }else
+      current = 0
+  }
+  return max
+};
