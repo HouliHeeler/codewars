@@ -1831,3 +1831,15 @@ function beggars(values, n){
   }
   return ans
 }
+
+//Check whether given number is STRONG!
+
+function strong(n) {
+  let arr = n.toString().split("") 
+  let sum = 0;
+  for(i=0;i<arr.length;i++) {
+    let formula = [...Array(Number(arr[i])).keys()].map(item => ++item).reduce((a,b) => a * b, 1)
+    sum += formula
+  }
+  return sum == n ? "STRONG!!!!" : "Not Strong!!"
+}
