@@ -1799,3 +1799,17 @@ function sumTriangularNumbers(n) {
   }
   return sum
 }
+
+//Break up array into parts
+
+function partlist(arr) {
+  let ans = [...Array(arr.length-1).keys()]
+  let tempOne;
+  let tempTwo;
+	for(i=0;i<arr.length-1;i++) {
+    tempOne = arr.slice(0, i + 1).join(" ")
+    tempTwo = arr.slice(i + 1).join(" ")
+    ans[i] = [tempOne, tempTwo]
+  }
+  return ans
+}
