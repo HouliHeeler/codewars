@@ -1940,3 +1940,10 @@ function numbersOfLetters(integer) {
   }
   return ans
 }
+
+//Curry functions
+
+function multiplyAll(arr) {
+  return function(x) {
+    return [...arr].map(num => num * x)} 
+}
