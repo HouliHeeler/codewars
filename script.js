@@ -1927,3 +1927,16 @@ function filthFever(con,dex) {
     }
   }
 }
+
+//Return number as string of written digits and simplify until length equals string value
+
+function numbersOfLetters(integer) {
+  const conversion = ['zero','one','two','three','four','five','six','seven','eight','nine']
+  let arr = integer.toString().split("").map(num => conversion[Number(num)]).join("")
+  const ans = [arr]
+  while(arr.length.toString().split("").map(num => conversion[Number(num)]).join("") != arr) {
+    arr = arr.length.toString().split("").map(num => conversion[Number(num)]).join("")
+    ans.push(arr)
+  }
+  return ans
+}
