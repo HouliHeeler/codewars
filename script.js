@@ -1897,3 +1897,33 @@ function numberOfPairs(gloves){
   }
   return pairs
 }
+
+//Navigate a journey of filth fever based on given dex and con
+
+function filthFever(con,dex) {
+  const conSave = Math.floor((con - 10)/2)
+  let count = 0
+  let saves = 0
+  let dieRoll;
+  let conDam;
+  let dexDam;
+  while(saves < 2) {
+    dieRoll = Math.ceil(Math.random() * 20) + conSave
+    conDam = Math.ceil(Math.random() * 3)
+    dexDam = Math.ceil(Math.random() * 3)
+    if(dieRoll >= 12) {
+      saves++
+      count++
+    }else {
+      saves = 0
+      count++
+      con -= conDam
+      dex -= dexDam
+    }
+    if(con <= 0 || dex <= 0) {
+      return `Succumbed to Filth Fever after ${count} days`
+    }else if(saves == 2) {
+      return `Survived a ${count} day ordeal with Filth Fever`
+    }
+  }
+}
