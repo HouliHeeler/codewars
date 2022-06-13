@@ -1961,3 +1961,10 @@ function toTime(seconds) {
 function reverseLetter(str) {
   return arr = str.split("").filter(char => char.match(/^[a-z]/gi)).reverse().join("")
 }
+
+//Drink enough water to avoid a hangover
+
+function hydrate(s) {
+  const drinks = s.split("").filter(char => char.match(/^[0-9]/)).reduce((a,b) => Number(a) + Number(b))
+  return drinks == 1 ? `${drinks} glass of water` : `${drinks} glasses of water`
+}
