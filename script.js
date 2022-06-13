@@ -1955,3 +1955,9 @@ function toTime(seconds) {
   const minutes = Math.floor((seconds - (hours * 3600))/60)
   return `${hours} hour(s) and ${minutes} minute(s)`
 }
+
+//Reverse string and exclude any non-alphabetical characters
+
+function reverseLetter(str) {
+  return arr = str.split("").filter(char => char.match(/^[a-z]/gi)).reverse().join("")
+}
