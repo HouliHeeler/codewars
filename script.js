@@ -1968,3 +1968,19 @@ function hydrate(s) {
   const drinks = s.split("").filter(char => char.match(/^[0-9]/)).reduce((a,b) => Number(a) + Number(b))
   return drinks == 1 ? `${drinks} glass of water` : `${drinks} glasses of water`
 }
+
+//Encode given string with given number
+
+function encode(str,  n) {
+  let arr = str.split("").map(char => char.charCodeAt(0)-96)
+  const code = n.toString().split("")
+  let count = 0
+  for(i=0;i<arr.length;i++) {
+    arr[i] += Number(code[count])
+    count++
+    if(count == code.length) {
+      count = 0
+    }
+  }
+  return arr
+}
