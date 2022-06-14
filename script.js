@@ -2021,3 +2021,10 @@ function squares(x, n) {
   }
   return ans
 }
+
+//Return two highest distinct numbers in array
+
+function twoHighest(arr) {
+  const ans = new Set([...arr].sort((a,b) => b - a))
+  return Array.from(ans).splice(0,2)
+}
