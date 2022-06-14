@@ -2008,3 +2008,16 @@ function balance(left,right){
   rightSum = rightSum.reduce((a,b) => a + b)
   return rightSum > leftSum ? 'Right' : leftSum == rightSum ? 'Balance' : 'Left'
 }
+
+//Return an array of 'n' length starting with 'x' value where each entry is the square of the previous
+
+function squares(x, n) {
+  if(n < 1) {
+    return []
+  }
+  const ans = [x]
+  for(i=1;i<n;i++) {
+    ans.push(ans[i-1]**2)
+  }
+  return ans
+}
