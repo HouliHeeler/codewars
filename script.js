@@ -1984,3 +1984,27 @@ function encode(str,  n) {
   }
   return arr
 }
+
+//Weigh given strings based on assigned values of exclamation points and question marks
+
+function balance(left,right){
+  let leftSum = left.split("")
+  let rightSum = right.split("")
+  for(i=0;i<leftSum.length;i++) {
+    if(leftSum[i] == '!') {
+      leftSum[i] = 2
+    }else if(leftSum[i] == '?') {
+      leftSum[i] = 3
+    }
+  }
+  for(i=0;i<rightSum.length;i++) {
+    if(rightSum[i] == '!') {
+      rightSum[i] = 2
+    }else if(rightSum[i] == '?') {
+      rightSum[i] = 3
+    }
+  }
+  leftSum = leftSum.reduce((a,b) => a + b)
+  rightSum = rightSum.reduce((a,b) => a + b)
+  return rightSum > leftSum ? 'Right' : leftSum == rightSum ? 'Balance' : 'Left'
+}
