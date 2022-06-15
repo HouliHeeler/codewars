@@ -2057,3 +2057,17 @@ function swap(str){
   }
   return arr.join("")
 }
+
+//Split given string into requested size parts
+
+var splitInParts = function(s, partLength){
+  const ans = []
+  let arr = s.split("")
+  let temp;
+  while(arr.length > partLength) {
+    temp = arr.splice(0,partLength)
+    ans.push(temp)
+  }
+  ans.push(arr)
+  return ans.map(item => item.join('')).join(" ")
+}
