@@ -2043,3 +2043,17 @@ var paintLetterboxes = function(start, end) {
   }
   return ans
 }
+
+//Switch case of every letter in string
+
+function swap(str){
+  let arr = str.split("")
+  for(i=0;i<arr.length;i++) {
+    if(arr[i] == arr[i].toUpperCase()) {
+      arr[i] = arr[i].toLowerCase()
+    }else if(arr[i] == arr[i].toLowerCase()) {
+      arr[i] = arr[i].toUpperCase()
+    }
+  }
+  return arr.join("")
+}
