@@ -2071,3 +2071,21 @@ var splitInParts = function(s, partLength){
   ans.push(arr)
   return ans.map(item => item.join('')).join(" ")
 }
+
+//Return count of uppercase, lowercase, numbers, and special characters
+
+function solve(s){
+  const ans = [0,0,0,0]
+  const arr = s.split("")
+  for(i=0;i<arr.length;i++) {
+    if(arr[i].match(/^[A-Z]/)) {
+      ans[0]++
+    }else if(arr[i].match(/^[a-z]/)) {
+      ans[1]++
+    }else if(arr[i].match(/^[0-9]/)) {
+      ans[2]++
+    }else
+      ans[3]++
+  }
+   return ans
+ }
