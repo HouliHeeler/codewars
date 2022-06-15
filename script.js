@@ -2028,3 +2028,18 @@ function twoHighest(arr) {
   const ans = new Set([...arr].sort((a,b) => b - a))
   return Array.from(ans).splice(0,2)
 }
+
+//Return number of times each digit occurs in string of numbers
+
+var paintLetterboxes = function(start, end) {
+  const arr = [...Array(end-start+1).keys()].map(num => start + num)
+  let ans = [...Array(10).keys()].fill(0)
+  let temp;
+  for(i=0;i<arr.length;i++) {
+    temp = arr[i].toString().split("")
+    for(j=0;j<temp.length;j++) {
+      ans[temp[j]]++
+    }
+  }
+  return ans
+}
