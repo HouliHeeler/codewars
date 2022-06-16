@@ -2096,10 +2096,22 @@ function solve(s){
   let count = 0
   const sorted = [...numbers].sort((a,b) => a - b)
   let sum = sorted[0]
-  console.log(sorted)
   while(sum < value) {
     sum += sorted[count+1]
     count++
   }
   return count
+}
+
+//Remove any 9's that are alone between two 7's
+
+function sevenAte9(str){
+  const arr = str.split("")
+  for(i=0;i<arr.length;i++) {
+    if(arr[i] == '9' && (arr[i-1] == '7' && arr[i+1] == '7')) {
+      arr.splice(i,1)
+      i--
+    }
+  }
+  return arr.join("")
 }
