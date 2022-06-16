@@ -2089,3 +2089,17 @@ function solve(s){
   }
    return ans
  }
+
+ //Count minimum times the lowest numbers of array need to be added to meet or beat the given value
+
+ function minimumSteps(numbers, value){
+  let count = 0
+  const sorted = [...numbers].sort((a,b) => a - b)
+  let sum = sorted[0]
+  console.log(sorted)
+  while(sum < value) {
+    sum += sorted[count+1]
+    count++
+  }
+  return count
+}
