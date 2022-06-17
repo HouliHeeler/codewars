@@ -2134,3 +2134,19 @@ function prefill(n, v) {
   }else
     return [...Array(n).keys()].fill(v)
 }
+
+//Return function where next number in series is sum of previous numbers
+
+function sumOfN(n) {
+  const arr = [0]
+  let temp = 0
+  for(i=1;i<=Math.abs(n);i++) {
+    if(n < 0) {
+      temp -= i
+    }else {
+      temp += i
+    }
+    arr.push(temp)
+  }
+  return arr
+};
