@@ -2115,3 +2115,9 @@ function sevenAte9(str){
   }
   return arr.join("")
 }
+
+//Return an array of given size, with alternating given values
+
+function alternate(n, firstValue, secondValue){
+  return [...Array(n).keys()].map((val,i) => i%2 == 0 ? val = firstValue : val = secondValue)
+}
