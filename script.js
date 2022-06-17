@@ -2121,3 +2121,16 @@ function sevenAte9(str){
 function alternate(n, firstValue, secondValue){
   return [...Array(n).keys()].map((val,i) => i%2 == 0 ? val = firstValue : val = secondValue)
 }
+
+//Return prefilled array of 'n' length with 'v' values
+
+function prefill(n, v) {
+  if(typeof n === 'boolean') {
+    throw new TypeError(`${n} is invalid`)
+  }else if(n == 0) {
+    return []
+  }else if(!Number.isInteger(n) || n < 0) {
+    throw new TypeError(`${n} is invalid`)
+  }else
+    return [...Array(n).keys()].fill(v)
+}
