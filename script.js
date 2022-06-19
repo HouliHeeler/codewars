@@ -2150,3 +2150,15 @@ function sumOfN(n) {
   }
   return arr
 };
+
+//Solve how much the next donation needs to be to raise the average donation to the given value
+
+function newAvg(arr, newavg) {
+  if(arr.length == 0) {
+    return newavg
+  }else if(newavg < arr.reduce((a,b) => a + b, 0)/arr.length) {
+    throw new RangeError('Donations cannot be negative')
+  }
+  const totalDonors = arr.length + 1
+  return Math.ceil((newavg * totalDonors) - arr.reduce((a,b) => a + b), 0)
+}
