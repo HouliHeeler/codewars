@@ -2162,3 +2162,15 @@ function newAvg(arr, newavg) {
   const totalDonors = arr.length + 1
   return Math.ceil((newavg * totalDonors) - arr.reduce((a,b) => a + b), 0)
 }
+
+//Return string with alternating upper and lower case letters
+
+function toWeirdCase(string){
+  const arr = string.split(" ")
+  return arr.map(el => el.split("")
+                         .map((el,i) => i%2==0 
+                         ? el.toUpperCase() 
+                         : el.toLowerCase())
+                         .join(""))
+                         .join(" ")
+}
