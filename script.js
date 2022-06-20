@@ -2174,3 +2174,9 @@ function toWeirdCase(string){
                          .join(""))
                          .join(" ")
 }
+
+//Is number divisible by three?
+
+function divisibleByThree(str){
+  return (str.split("").reduce((a,b) => Number(a) + Number(b)))%3 == 0
+}
