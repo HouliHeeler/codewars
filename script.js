@@ -2180,3 +2180,12 @@ function toWeirdCase(string){
 function divisibleByThree(str){
   return (str.split("").reduce((a,b) => Number(a) + Number(b)))%3 == 0
 }
+
+//Return array with vowel positions in given string
+
+function vowelIndices(word){
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y']
+  return word.split("").map((el, i) => vowels.includes(el) 
+                       ? el = i + 1: el)
+                       .filter(el => Number.isInteger(el))
+}
