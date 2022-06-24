@@ -2189,3 +2189,15 @@ function vowelIndices(word){
                        ? el = i + 1: el)
                        .filter(el => Number.isInteger(el))
 }
+
+//Return either a vertical or horizontal mirror of given string based on called for function
+
+function vertMirror(strng) {
+  return strng.split("\n").map(el => el.split("").reverse().join("")).join("\n")
+}
+function horMirror(strng) {
+  return strng.split("\n").reverse().join("\n")
+}
+function oper(fct, s) {
+  return fct(s)
+}
