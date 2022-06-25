@@ -2209,3 +2209,24 @@ function alphabetWar(fight){
   const ans = fight.split("").map(el => values[el] ? values[el]: 0).reduce((a,b) => a + b)
   return ans == 0 ? "Let's fight again!" : ans < 0 ? "Left side wins!" : "Right side wins!"
 }
+
+//Dashatize odd numbers that aren't first or last
+
+function dashatize(num) {
+  if(isNaN(num)) {
+    return 'NaN'
+  }
+  const number = Math.abs(num).toString().split("").map((n => n%2 != 0 ? `-${n}-` : n)).join("").split("")
+  if(number[0] == '-') {
+    number.shift()
+  }
+  if(number[number.length-1] == '-') {
+    number.pop()
+  }
+  for(i=1;i<number.length;i++) {
+    if(number[i-1] == '-' && number[i] == '-') {
+      number.splice(i,1)
+    }
+  }
+  return number.join("")
+}
