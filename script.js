@@ -2230,3 +2230,23 @@ function dashatize(num) {
   }
   return number.join("")
 }
+
+//Kebabize string from camelCase
+
+function kebabize(str) {
+  console.log(str)
+  const arr = str.split("")
+  for(i=0;i<arr.length;i++) {
+    if(arr[i].match(/^[A-Z]/)) {
+      arr[i] = arr[i].toLowerCase()
+      if(i != 0) {
+        arr.splice(i,0,'-')
+        i++
+      } 
+    }else if(!arr[i].match(/^[a-z]/i)) {
+      arr.splice(i,1)
+      i--
+    }
+  }
+  return arr.join("")
+}
