@@ -2250,3 +2250,18 @@ function kebabize(str) {
   }
   return arr.join("")
 }
+
+//Return maximum gap between successive numbers in sorted array
+
+function maxGap (numbers){
+  const arr = numbers.sort((a,b) => a - b)
+  let gap = 0;
+  let temp;
+  for(i=1;i<arr.length;i++) {
+    temp = Math.abs(arr[i] - arr[i-1])
+    if(temp > gap) {
+      gap = temp
+    }
+  }
+  return gap
+}
