@@ -2265,3 +2265,12 @@ function maxGap (numbers){
   }
   return gap
 }
+
+function greet(name) {
+  if(name == null) {
+    return null
+  }else if(name.length == 0) {
+    return null
+  }else
+    return `hello ${name}!`
+}
