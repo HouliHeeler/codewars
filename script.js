@@ -2281,4 +2281,9 @@ function billboard(name, price = 30){
     count += price
   }
   return count
-} 
+}
+
+function bingo(a) {
+  const answer = [2,9,14,7,15]
+  return answer.every(el => a.includes(el)) ? "WIN" : "LOSE"
+}
