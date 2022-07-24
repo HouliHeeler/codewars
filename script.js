@@ -2274,3 +2274,11 @@ function greet(name) {
   }else
     return `hello ${name}!`
 }
+
+function billboard(name, price = 30){
+  let count = 0
+  for(i=0;i<name.length;i++) {
+    count += price
+  }
+  return count
+} 
