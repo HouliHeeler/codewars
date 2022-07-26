@@ -2266,6 +2266,8 @@ function maxGap (numbers){
   return gap
 }
 
+// Return greeting
+
 function greet(name) {
   if(name == null) {
     return null
@@ -2275,6 +2277,8 @@ function greet(name) {
     return `hello ${name}!`
 }
 
+//Solve cost of lettering on billboard
+
 function billboard(name, price = 30){
   let count = 0
   for(i=0;i<name.length;i++) {
@@ -2283,7 +2287,15 @@ function billboard(name, price = 30){
   return count
 }
 
+//Confirm whether or not you can achieve 'Bingo' based on given numbers
+
 function bingo(a) {
   const answer = [2,9,14,7,15]
   return answer.every(el => a.includes(el)) ? "WIN" : "LOSE"
+}
+
+//Solve whether 'a' and 'b' appear consecutively in given array
+
+function consecutive(arr, a, b) {
+  return arr.indexOf(a) + 1 == arr.indexOf(b) || arr.indexOf(b) + 1 == arr.indexOf(a) ? true : false
 }
