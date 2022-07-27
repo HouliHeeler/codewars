@@ -2299,3 +2299,17 @@ function bingo(a) {
 function consecutive(arr, a, b) {
   return arr.indexOf(a) + 1 == arr.indexOf(b) || arr.indexOf(b) + 1 == arr.indexOf(a) ? true : false
 }
+
+//Return true if given array consists of three of one letter and two of another
+
+function checkThreeAndTwo(array) {
+  const counts = {
+    a:0,
+    b:0,
+    c:0
+  }
+  for(i=0;i<array.length;i++) {
+    counts[array[i]]++
+  }
+  return Object.values(counts).includes(3) && Object.values(counts).includes(2)
+}
