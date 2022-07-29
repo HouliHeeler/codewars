@@ -2313,3 +2313,9 @@ function checkThreeAndTwo(array) {
   }
   return Object.values(counts).includes(3) && Object.values(counts).includes(2)
 }
+
+//Return given string with all cases switched, and the order of words reversed
+
+function stringTransformer(str) {
+  return str.split("").map(el => el.toUpperCase() == el ? el.toLowerCase() : el.toUpperCase()).join("").split(" ").reverse().join(" ")
+}
