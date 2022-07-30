@@ -2319,3 +2319,13 @@ function checkThreeAndTwo(array) {
 function stringTransformer(str) {
   return str.split("").map(el => el.toUpperCase() == el ? el.toLowerCase() : el.toUpperCase()).join("").split(" ").reverse().join(" ")
 }
+
+//Cut out the position of the letter in given string according to given array
+
+function lastSurvivor(letters, coords) {
+	while(coords.length > 0) {
+    letters = letters.slice(0,coords[0]) + letters.slice(coords[0] + 1)
+    coords.shift()
+  }
+  return letters
+}
