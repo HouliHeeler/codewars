@@ -2346,3 +2346,18 @@ function product (string) {
   }
   return exclams * questions
 }
+
+//Ensure given string has valid spacing
+
+function validSpacing(s) {
+  const arr = s.split("")
+  if(arr[0] == ' ' || arr[arr.length-1] == ' ') {
+    return false
+  }
+  for(i=0;i<arr.length;i++) {
+    if(arr[i] == ' ' && arr[i+1] == ' ') {
+      return false
+    }
+  }
+  return true
+}
