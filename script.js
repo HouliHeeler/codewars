@@ -2329,3 +2329,20 @@ function lastSurvivor(letters, coords) {
   }
   return letters
 }
+
+//Count number of question and exclamation marks in given string, and return the product of the two totals
+
+function product (string) {
+  let exclams = 0;
+  let questions = 0;
+  let ans = string.split("")
+  for(i=0;i<string.length;i++) {
+    if(ans[i] == "?") {
+      questions++
+    }
+    else if(ans[i] == "!") {
+      exclams++
+    }
+  }
+  return exclams * questions
+}
