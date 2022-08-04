@@ -2361,3 +2361,29 @@ function validSpacing(s) {
   }
   return true
 }
+
+//Write four functions segmenting arrays in various ways
+
+function head(arr) {
+  return arr[0]
+}
+
+function tail(arr) {
+  return arr.slice(1)
+}
+
+function init(arr) {
+  return arr.slice(0,arr.length-1)
+}
+
+function last(arr) {
+  return arr[arr.length-1]
+}
+
+//Sort given array by numbers first, then by strings
+
+function dbSort(a){
+	const nums = a.filter(el => Number.isInteger(el)).sort((a,b) => a - b)
+  const strings = a.filter(el => !Number.isInteger(el)).sort()
+  return nums.concat(strings)
+}
