@@ -2387,3 +2387,22 @@ function dbSort(a){
   const strings = a.filter(el => !Number.isInteger(el)).sort()
   return nums.concat(strings)
 }
+
+//Return a count of individual letters in a given name, case insensitive, no spaces
+
+function getStrings(city){
+  const arr = city.toLowerCase().split(" ").join("").split("")
+  const obj = {}
+  for(i=0;i<arr.length;i++) {
+    if(!obj[arr[i]]) {
+			obj[arr[i]] = 1
+    }else
+      obj[arr[i]] ++
+  }
+  const ast = "*"
+  let answer = [];
+  for(const property in obj) {
+    answer.push(`${property}:${ast.repeat(obj[property])}`)
+  }
+  return answer.join(",")
+}
