@@ -2406,3 +2406,9 @@ function getStrings(city){
   }
   return answer.join(",")
 }
+
+//Find minimum and maximum values in given array
+
+function getMinMax(arr){
+  return [Math.min(...arr),Math.max(...arr)]
+};
