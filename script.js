@@ -2412,3 +2412,15 @@ function getStrings(city){
 function getMinMax(arr){
   return [Math.min(...arr),Math.max(...arr)]
 };
+
+//Remove any integer in given list from given array
+
+Array.prototype.remove_ = function(integer_list, values_list){
+  for(i=0;i<integer_list.length;i++) {
+    if(values_list.includes(integer_list[i])) {
+      integer_list.splice(i,1)
+      i--
+    }
+  }
+  return integer_list
+}
