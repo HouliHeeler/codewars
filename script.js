@@ -2436,3 +2436,11 @@ function initializeNames(name){
   }
   return arr.join(" ")
 }
+
+//Find general happiness level in office meeting
+
+function outed(meet, boss){
+  const ceo = meet[boss]
+	const ans = (Object.values(meet).reduce((a,b) => a + b, 0) + ceo)/(Object.keys(meet).length)
+  return ans <= 5 ? 'Get Out Now!' : 'Nice Work Champ!'
+}
