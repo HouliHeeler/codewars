@@ -2424,3 +2424,15 @@ Array.prototype.remove_ = function(integer_list, values_list){
   }
   return integer_list
 }
+
+//Initialize middle names
+
+function initializeNames(name){
+  let arr = name.split(" ")
+  if(arr.length > 2) {
+    for(i=1;i<arr.length-1;i++) {
+      arr[i] = `${arr[i].substring(0,1)}.`
+    }
+  }
+  return arr.join(" ")
+}
