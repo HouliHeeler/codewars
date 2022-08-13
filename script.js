@@ -2444,3 +2444,15 @@ function outed(meet, boss){
 	const ans = (Object.values(meet).reduce((a,b) => a + b, 0) + ceo)/(Object.keys(meet).length)
   return ans <= 5 ? 'Get Out Now!' : 'Nice Work Champ!'
 }
+
+//Check if your lottery ticket is a winner
+
+function bingo(ticket, win){
+  let wins = 0;
+  for(i=0;i<ticket.length;i++) {
+    if(ticket[i][0].split("").filter(el => el.charCodeAt(0) == ticket[i][1]).length > 0) {
+      wins++
+    }
+  }
+  return wins >= win ? 'Winner!' : 'Loser!'
+}
