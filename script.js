@@ -2456,3 +2456,25 @@ function bingo(ticket, win){
   }
   return wins >= win ? 'Winner!' : 'Loser!'
 }
+
+//How bored is the department?
+
+function boredom(staff){
+  let bored = 0;
+  const dept = {
+    accounts: 1,
+    finance: 2,
+    canteen: 10,
+    regulation: 3,
+    trading: 6,
+    change: 6,
+    IS: 8,
+    retail: 5,
+    cleaning: 4,
+    pissingabout: 25
+  }
+  for(const people in staff) {
+    bored += (dept[staff[people].split(" ").join("")])
+  }
+  return bored <= 80 ? 'kill me now' : bored >= 100 ? 'party time!!' : 'i can handle this'
+}
