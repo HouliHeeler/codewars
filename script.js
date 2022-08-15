@@ -2478,3 +2478,17 @@ function boredom(staff){
   }
   return bored <= 80 ? 'kill me now' : bored >= 100 ? 'party time!!' : 'i can handle this'
 }
+
+//Switch given 1's and 0's in binary code
+
+function broken(x){
+  let arr = x.split("")
+  for(i=0;i<x.length;i++) {
+    if(arr[i] == '1') {
+      arr[i] = 0
+    }else if(arr[i] == '0') {
+      arr[i] = 1
+    }
+  }
+  return arr.join("")
+}
