@@ -2492,3 +2492,9 @@ function broken(x){
   }
   return arr.join("")
 }
+
+//Find the open meeting room in given array 
+
+function meeting(x){
+  return x.indexOf('O') != -1 ? x.indexOf('O') : 'None available!'
+}
