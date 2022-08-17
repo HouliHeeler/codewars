@@ -2498,3 +2498,32 @@ function broken(x){
 function meeting(x){
   return x.indexOf('O') != -1 ? x.indexOf('O') : 'None available!'
 }
+
+//Find enough chairs from the given meeting rooms based on need and occupancy
+
+function meeting(x, need){
+  if(need == 0) {
+    return 'Game On'
+  }
+	let chairs = 0;
+  let arr = []
+  let number = 0;
+  for(i=0;i<x.length;i++) {
+    let formula = x[i][1] - x[i][0].length
+    if(formula > 0) {
+      number = formula
+    } else {
+      number = 0
+    }
+    if(need >= (chairs + number)) {
+      arr.push(number)
+    } else {
+      arr.push(need - chairs)
+    }
+    chairs += number
+    if(chairs >= need) {
+      return arr
+    }
+  }
+  return 'Not enough!'
+}
