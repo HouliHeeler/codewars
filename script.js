@@ -2527,3 +2527,18 @@ function meeting(x, need){
   }
   return 'Not enough!'
 }
+
+//Will you be granted a sabbatical?
+
+function sabb(s, val, happiness){
+  let count = 0
+  const word = 'sabbatical'
+  const arr = s.split("")
+  for(i=0;i<arr.length;i++) {
+    if(word.includes(arr[i])) {
+      count++
+    }
+  }
+  const num = count + val + happiness
+  return num > 22 ? 'Sabbatical! Boom!' : 'Back to your desk, boy.'
+}
