@@ -2569,3 +2569,10 @@ function rank(st, we, n) {
   })
   return list[n-1][1]
 }
+
+//Remove vowels from given strings
+
+var removeVowels = function(str){
+  const vowels = ['a','e','i','o','u','A','E','I','O','U']
+  return str.split("").filter(el => !vowels.includes(el)).join("")
+}
