@@ -2542,3 +2542,30 @@ function sabb(s, val, happiness){
   const num = count + val + happiness
   return num > 22 ? 'Sabbatical! Boom!' : 'Back to your desk, boy.'
 }
+
+//Return the winner of a lottery based on given criteria
+
+function rank(st, we, n) {
+  if(st == '') {
+    return 'No participants'
+  }
+  const names = st.split(",")
+  if(n > names.length) {
+    return 'Not enough participants'
+  }
+	let arr = st.split(",").map(el => el.toUpperCase()).map(el => el.split("").map(letter => letter.charCodeAt(0) - 64)).map(el => el.reduce((a,b) => a + b) + el.length).map((el,i) => el * we[i])
+  let list = arr.map(function (value, index) {
+    return [value, names[index]]
+  })
+  list.sort(function(a,b) { 
+    if(b[0] > a[0]) return 1
+    if(b[0] < a[0]) return -1
+  })
+  list.sort(function(a,b) {
+    if(a[0] == b[0]) {
+     	if(b[1] < a[1]) return 1
+    	if(b[1] > a[1]) return -1
+    }
+  })
+  return list[n-1][1]
+}
