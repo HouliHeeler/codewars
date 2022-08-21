@@ -2612,3 +2612,9 @@ function planeSeat(a){
   }
   return 'No Seat!!'
 }
+
+//Filter out words in sentence that are longer than given variable
+
+function filterLongWords(sentence, n) {
+  return sentence.split(" ").filter(el => el.length > n)
+}
