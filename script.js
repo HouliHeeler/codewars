@@ -2576,3 +2576,39 @@ var removeVowels = function(str){
   const vowels = ['a','e','i','o','u','A','E','I','O','U']
   return str.split("").filter(el => !vowels.includes(el)).join("")
 }
+
+//Determine what section of the plane you are in based on given seat number
+
+function planeSeat(a){
+  const left = ['A','B','C']
+  const middle = ['D','E','F']
+  const right = ['G','H','K']
+  const letter = a.slice(a.length-1)
+  const number = a.slice(0,(a.length-1))
+  if(number <= 20 && number > 0) {
+    if(left.includes(letter)) {
+      return 'Front-Left'
+    }else if(middle.includes(letter)) {
+      return 'Front-Middle'
+    }else if(right.includes(letter)) {
+      return 'Front-Right'
+    }
+  }else if(number <= 40 && number > 20) {
+    if(left.includes(letter)) {
+      return 'Middle-Left'
+    }else if(middle.includes(letter)) {
+      return 'Middle-Middle'
+    }else if(right.includes(letter)) {
+      return 'Middle-Right'
+    }
+  }else if(number <= 60 && number > 40) {
+    if(left.includes(letter)) {
+      return 'Back-Left'
+    }else if(middle.includes(letter)) {
+      return 'Back-Middle'
+    }else if(right.includes(letter)) {
+      return 'Back-Right'
+    }
+  }
+  return 'No Seat!!'
+}
