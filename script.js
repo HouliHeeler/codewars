@@ -2618,3 +2618,17 @@ function planeSeat(a){
 function filterLongWords(sentence, n) {
   return sentence.split(" ").filter(el => el.length > n)
 }
+
+//Return the highest number in sequence of rotations of given number
+
+function maxRot(n) {
+	let arr = [n]
+  let temp;
+  let num = n.toString().split("")
+  for(i=0;i<num.length;i++) {
+  	temp = num.splice(i,1)
+    num.push(temp)
+    arr.push(Number(num.join("")))
+  }
+  return Math.max(...arr)
+}
