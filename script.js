@@ -2641,3 +2641,12 @@ function sumOfIntegersInString(s){
           .map(el => Number(el))
           .reduce((a,b) => a + b, 0)
 }
+
+//Find sum of all even indexed numbers in array, multiplied by final number in array
+
+function evenLast(numbers) {
+  return numbers.length > 0 
+         ? numbers.filter((el,i) => i%2 == 0)
+                  .reduce((a,b) => a + b) * numbers[numbers.length-1] 
+         : 0
+}
