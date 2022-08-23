@@ -2632,3 +2632,12 @@ function maxRot(n) {
   }
   return Math.max(...arr)
 }
+
+//Find sum of all numbers in a given string
+
+function sumOfIntegersInString(s){
+  return s.split(/(\d+)/)
+          .filter(el => !isNaN(el))
+          .map(el => Number(el))
+          .reduce((a,b) => a + b, 0)
+}
