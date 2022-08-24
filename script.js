@@ -2693,3 +2693,39 @@ function modifyMultiply (str,loc,num) {
   const arr = Array(num).fill(word)
   return arr.join("-")
 } 
+
+//Turn words in given string inside out
+
+function insideOut(x){
+	let arr = x.split(" ")
+  let count;
+  let temp1;
+  let temp2;
+  for(i=0;i<arr.length;i++) {
+    count = arr[i].length
+    temp1 = arr[i].slice(0,Math.floor(count/2)).split("").reverse().join("")
+    temp2 = arr[i].slice(Math.ceil(count/2)).split("").reverse().join("")
+    if(arr[i]%2 == 0) {
+      arr[i] = temp1 + temp2
+    }else {
+      arr[i] = `${temp1}${arr[i].slice(Math.floor(count/2),Math.ceil(count/2))}${temp2}`
+    }
+  }
+  return arr.join(" ")
+}
+
+//Return count of each instance of character in order of appearance
+
+var orderedCount = function (text) {
+  const obj = {}
+  const ans = []
+  const arr = text.split("")
+  for(i=0;i<arr.length;i++) {
+    if(!obj[arr[i]]) {
+      obj[arr[i]] = 1
+      ans.push(arr[i])
+    }else
+      obj[arr[i]] += 1
+  }
+  return ans.map((el,i) => [el, obj[ans[i]]])
+}
