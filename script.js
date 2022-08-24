@@ -2671,3 +2671,17 @@ function upArray(arr){
  const end = (Number(arr.splice(arr.length - digits,digits).join(""))+1).toString().split("").map(el => Number(el))
  return arr.concat(end)
 }
+
+//Confirm whether given array is 'Nice'
+
+function isNice(arr){
+  if(arr.length == 0) {
+    return false
+  }
+  for(i=0;i<arr.length;i++) {
+    if(!arr.includes(arr[i]+1) && !arr.includes(arr[i]-1)) {
+      return false
+    }
+  }
+  return true
+}
