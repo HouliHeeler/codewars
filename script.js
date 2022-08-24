@@ -2650,3 +2650,24 @@ function evenLast(numbers) {
                   .reduce((a,b) => a + b) * numbers[numbers.length-1] 
          : 0
 }
+
+//Increase the given array number by one
+
+function upArray(arr){
+  const ans = [...arr].map(el => el.toString()).filter(num => num.length == 1).filter(num => num >= 0)
+ if(ans.length != arr.length || arr.length == 0) {
+   return null
+ }
+ let digits = 1
+ for(i=arr.length-1;i>=0;i--) {
+   if(arr[i] == 9) {
+     digits++
+   }else
+     break
+ }
+ if(arr.filter(num => num == 9).length == arr.length) {
+   return (Number(arr.join(""))+1).toString().split("").map(el => Number(el))
+ }
+ const end = (Number(arr.splice(arr.length - digits,digits).join(""))+1).toString().split("").map(el => Number(el))
+ return arr.concat(end)
+}
