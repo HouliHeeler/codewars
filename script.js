@@ -2685,3 +2685,11 @@ function isNice(arr){
   }
   return true
 }
+
+//Find word in given location in given string, and multiply it the required amount of times
+
+function modifyMultiply (str,loc,num) {
+	const word = str.split(" ")[loc]
+  const arr = Array(num).fill(word)
+  return arr.join("-")
+} 
