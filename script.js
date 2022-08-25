@@ -2746,3 +2746,22 @@ function minimumNumber(numbers){
     }
   }
 }
+
+//Count how many ordered vowels exist in a given string
+
+function getTheVowels(word) {
+  let count = 0;
+  let vowelcount = 0
+  const vowels = ['a','e','i','o','u']
+  let newString = word.split("").filter(letter => vowels.includes(letter))
+  for(i=0;i<newString.length;i++) {
+    if(vowels[vowelcount] == newString[i]) {
+      count++
+      if(vowelcount == 4) {
+        vowelcount = 0;
+      }else {
+        vowelcount++
+      }
+    }
+  }return count
+}
