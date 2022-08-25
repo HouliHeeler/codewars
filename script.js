@@ -2729,3 +2729,20 @@ var orderedCount = function (text) {
   }
   return ans.map((el,i) => [el, obj[ans[i]]])
 }
+
+//Find number to be added to array to make the sum of the array a prime number
+
+function minimumNumber(numbers){
+  const sum = numbers.reduce((a,b) => a + b, 0)
+  let prime;
+  for(i=sum;i<sum*sum;i++) {
+    for(j=2;j<i;j++) {
+      if(i%j === 0) {
+        break;
+      }else if((j === (i - 1)) && i%j !== 0) {
+        prime = i
+        return prime - sum
+      }
+    }
+  }
+}
