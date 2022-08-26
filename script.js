@@ -2787,3 +2787,36 @@ function compare(s1, s2) {
   }
   return stringOne == stringTwo
 }
+
+//Count the number of deaf rats in a given string
+
+var countDeafRats = function(town) {
+  let deafRats = 0;
+  town = town.split("").filter(el => el != " ")
+  if(town.indexOf('P') == 0) {
+    for(i=1;i<town.length;i+=2) {
+      if(town[i] == '~') {
+        deafRats++
+      }
+    }
+  }else if(town.indexOf('P') == (town.length-1)) {
+    for(i=0;i<town.length;i+=2) {
+      if(town[i] == 'O') {
+        deafRats++
+      }
+    }
+  }else {
+    town = town.join("").split("P").map(arr => arr.split(""))
+    for(i=1;i<town[0].length;i+=2) {
+      if(town[0][i] == '~') {
+        deafRats++
+      }
+    }
+    for(i=0;i<town[1].length;i+=2) {
+      if(town[1][i] == '~') {
+        deafRats++
+      }
+    }
+  }
+  return deafRats
+}
