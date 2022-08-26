@@ -2765,3 +2765,25 @@ function getTheVowels(word) {
     }
   }return count
 }
+
+//Compare strings by sums of characters
+
+function compare(s1, s2) {
+  let stringOne;
+  let stringTwo;
+  if(s1 == null || s1.length == 0) {
+    stringOne = 0
+  }else if(((s1.split("").filter(el => el.match(/[a-z]/i))).length) !== s1.length) {
+    stringOne = 0
+  }else {
+    stringOne = s1.toUpperCase().split("").map(el => el.charCodeAt(0)).reduce((a,b) => a + b)
+  }
+  if(s2 == null || s2.length == 0) {
+    stringTwo = 0
+  }else if((s2.split("").filter(el => el.match(/[a-z]/i))).length != s2.length) {
+    stringTwo = 0
+  }else {
+    stringTwo = s2.toUpperCase().split("").map(el => el.charCodeAt(0)).reduce((a,b) => a + b)
+  }
+  return stringOne == stringTwo
+}
