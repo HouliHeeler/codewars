@@ -2820,3 +2820,23 @@ var countDeafRats = function(town) {
   }
   return deafRats
 }
+
+//Recreate given list by adding first and last numbers of list, then reversing initial list, continuing until all numbers are accounted for
+
+function arrange(s) {
+  let T = []
+  let front = 0
+  let end = s.length-1
+  while(s.length > T.length) {
+    if(s.length == T.length+1) {
+      T.push(s[front])
+    }else if(front%2 == 0) {
+      T.push(s[front],s[end])
+    }else {
+      T.push(s[end],s[front])
+    }
+    front++
+    end--
+  }
+  return T
+}
