@@ -2840,3 +2840,27 @@ function arrange(s) {
   }
   return T
 }
+
+//Find the point in the given array where the sum of the left side equals the sum of the right side
+
+var pivotIndex = function(nums) {
+  if(nums.length == 1 && nums[0] == 0) {
+      return 0
+  }
+  let sumLeft = 0
+  let sumRight = nums.slice(1).reduce((a,b) => a + b)
+  if(sumRight == sumLeft) {
+    return 0
+  }
+  for(i=1;i<nums.length-1;i++) {
+      sumLeft = nums.slice(0,i).reduce((a,b) => a + b)
+      sumRight = nums.slice(i+1).reduce((a,b) => a + b)
+      if(sumLeft == sumRight) {
+          return i
+      }
+  }
+  if(nums.slice(0,nums.length-1).reduce((a,b) => a + b) == 0) {
+    return nums.length-1
+  }
+  return -1
+};
