@@ -2857,3 +2857,23 @@ var pivotIndex = function(nums) {
   }
   return -1
 };
+
+// Can a given string be mapped exactly to another string?
+
+var isIsomorphic = function(s, t) {
+  const morph = s.split("")
+  const morphTwo = t.split("")
+  for(i=0;i<morph.length;i++) {
+    if(i == s.indexOf(s[i])) {
+      morph[i] = t[i]
+    }else {
+      morph[i] = t[s.indexOf(s[i])]
+    }
+    if(i == t.indexOf(t[i])) {
+      morphTwo[i] = s[i]
+    }else {
+      morphTwo[i] = s[t.indexOf(t[i])]
+    }
+  }
+  return morph.join("") == t && morphTwo.join("") == s
+};
