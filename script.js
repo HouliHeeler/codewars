@@ -2844,23 +2844,16 @@ function arrange(s) {
 //Find the point in the given array where the sum of the left side equals the sum of the right side
 
 var pivotIndex = function(nums) {
-  if(nums.length == 1 && nums[0] == 0) {
-      return 0
-  }
-  let sumLeft = 0
-  let sumRight = nums.slice(1).reduce((a,b) => a + b)
-  if(sumRight == sumLeft) {
+	let sum = nums.reduce((a,b) => a + b)
+  let leftSum = 0
+  if(sum - nums[0] == leftSum) {
     return 0
   }
-  for(i=1;i<nums.length-1;i++) {
-      sumLeft = nums.slice(0,i).reduce((a,b) => a + b)
-      sumRight = nums.slice(i+1).reduce((a,b) => a + b)
-      if(sumLeft == sumRight) {
-          return i
-      }
-  }
-  if(nums.slice(0,nums.length-1).reduce((a,b) => a + b) == 0) {
-    return nums.length-1
+  for(i=1;i<nums.length;i++) {
+    leftSum = nums.slice(0,i).reduce((a,b) => a + b)
+    if(sum - leftSum - nums[i] == leftSum) {
+      return i
+    }
   }
   return -1
 };
