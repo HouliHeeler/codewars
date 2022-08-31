@@ -2911,3 +2911,31 @@ var reverse = function(x) {
   const ans = negative * Number(x.toString().split("").reverse().join(""))
   return ans > 2147483647 || ans < -2147483648 ? 0 : ans
 };
+
+//Convert a string to a number, with several restrictions
+
+var myAtoi = function(s) {
+  let negative = 1
+  s = parseInt(s.trim())
+  if(s < 0) {
+    s = Math.abs(s)
+    negative = -1
+  }
+  const ans = negative * Number(s)
+  return isNaN(ans) ? 0 : ans < -2147483648 ? -2147483648 : ans > 2147483647 ? 2147483647 : ans
+};
+
+//Find the longest common prefix for a given array of strings
+
+var longestCommonPrefix = function(strs) {
+  strs.sort((a,b) => a.length - b.length)
+  let count = 0
+  for(i=0;i<strs[strs.length-1].length;i++) {
+    if(strs.every(word => word[i] === strs[0][i])) {
+      count++
+    }else {
+        break
+    }
+  }
+  return strs[0].substring(0,count)
+};
