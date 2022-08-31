@@ -2899,3 +2899,15 @@ var isSubsequence = function(s, t) {
 var isPalindrome = function(x) {
   return Number(x.toString().split("").reverse().join("")) === x
 };
+
+//Reverse given number, and return 0 if outside the 32bit integer range
+
+var reverse = function(x) {
+  let negative = 1
+  if(x < 0) {
+    x = Math.abs(x)
+    negative = -1
+  }
+  const ans = negative * Number(x.toString().split("").reverse().join(""))
+  return ans > 2147483647 || ans < -2147483648 ? 0 : ans
+};
