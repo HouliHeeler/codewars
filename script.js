@@ -2877,3 +2877,25 @@ var isIsomorphic = function(s, t) {
   }
   return morph.join("") == t && morphTwo.join("") == s
 };
+
+// Is the first string a subsequence of the second string?
+
+var isSubsequence = function(s, t) {
+  const arr = s.split("")
+  const arrTwo = t.split("")
+  for(i=0;i<arr.length;i++) {
+      if(arrTwo.indexOf(arr[i]) == -1) {
+          return false
+      }else {
+          arrTwo.splice(0,arrTwo.indexOf(arr[i])+1)
+          
+      }
+  }
+  return true
+};
+
+//Is the given number a palindrome?
+
+var isPalindrome = function(x) {
+  return Number(x.toString().split("").reverse().join("")) === x
+};
