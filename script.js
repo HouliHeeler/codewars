@@ -2939,3 +2939,18 @@ var longestCommonPrefix = function(strs) {
   }
   return strs[0].substring(0,count)
 };
+
+//Write a function that returns the amount of individual instances of a number
+
+var removeDuplicates = function(nums) {
+  let arr = []
+  for(i=0;i<nums.length;i++) {
+      if(i == nums.indexOf(nums[i])) {
+          arr.push(nums[i])
+    }
+  }
+  for(j=0;j<arr.length;j++) {
+      nums[j] = arr[j]
+  }
+  return arr.length
+};
