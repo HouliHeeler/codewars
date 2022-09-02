@@ -2954,3 +2954,13 @@ var removeDuplicates = function(nums) {
   }
   return arr.length
 };
+
+//Return index of target in given sorted array, or where index of target would be if inserted into given array
+
+var searchInsert = function(nums, target) {
+  if(nums.includes(target)) {
+      return nums.indexOf(target)
+  }else {
+      return nums.filter(number => number < target).length
+  }  
+};
