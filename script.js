@@ -2980,3 +2980,22 @@ var lengthOfLastWord = function(s) {
   }
   return count
 };
+
+//Increase given array of numbers by one
+
+var plusOne = function(digits) {
+  if(digits.every(num => num === 9)) {
+    return (Number(digits.join("")) + 1).toString().split("").map(num => Number(num))
+  }
+  let count = 0
+  for(i=digits.length-1;i>=0;i--) {
+    if(digits[i] == 9) {
+      count++
+    }else {
+      break
+    }
+  }
+  console.log(count)
+  const change = (Number(digits.slice((digits.length - 1) - count).join("")) + 1).toString().split("").map(el => Number(el))
+  return digits.splice(0,(digits.length - 1) - count).concat(change)
+};
