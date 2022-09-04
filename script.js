@@ -2964,3 +2964,19 @@ var searchInsert = function(nums, target) {
       return nums.filter(number => number < target).length
   }  
 };
+
+//Return length of last word in given string
+
+var lengthOfLastWord = function(s) {
+  let count = 0
+  for(i=s.length-1;i>=0;i--) {
+      if(s[i] == " " && count == 0) {
+          continue
+      }else if(s[i] != " "){
+          count++
+      }else {
+          break
+      }
+  }
+  return count
+};
