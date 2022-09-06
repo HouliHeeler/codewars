@@ -2999,3 +2999,9 @@ var plusOne = function(digits) {
   const change = (Number(digits.slice((digits.length - 1) - count).join("")) + 1).toString().split("").map(el => Number(el))
   return digits.splice(0,(digits.length - 1) - count).concat(change)
 };
+
+//Concatenate two arrays
+
+var getConcatenation = function(nums) {
+  return nums.concat(nums)
+};
