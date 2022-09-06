@@ -3015,3 +3015,10 @@ var buildArray = function(nums) {
   }
   return ans
 };
+
+//Return new array with every instance containing the product of every number in the array but itself
+
+function productArray(numbers){
+  const prod = numbers.reduce((a,b) => a * b)
+  return numbers.map(num => prod/num)
+}
