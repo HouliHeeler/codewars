@@ -3005,3 +3005,13 @@ var plusOne = function(digits) {
 var getConcatenation = function(nums) {
   return nums.concat(nums)
 };
+
+//Build a zero based array based on permutations
+
+var buildArray = function(nums) {
+  let ans = []
+  for(i=0;i<nums.length;i++) {
+      ans.push(nums[nums[i]])
+  }
+  return ans
+};
