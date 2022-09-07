@@ -3022,3 +3022,14 @@ function productArray(numbers){
   const prod = numbers.reduce((a,b) => a * b)
   return numbers.map(num => prod/num)
 }
+
+//Return the only value in given array that does not have a double
+
+var singleNumber = function(nums) {
+  let temp;
+  for(i=0;i<nums.length;i++) {
+    if(nums.indexOf(nums[i]) == nums.lastIndexOf(nums[i])) {
+      return nums[i]
+    }
+  }
+};
