@@ -3033,3 +3033,21 @@ var singleNumber = function(nums) {
     }
   }
 };
+
+//Return TRUE if given number is a power of 2
+
+var isPowerOfTwo = function(n) {
+  if(n == 1) {
+      return true
+  }
+  let power = 0;
+  let count = 1
+  while(power < n) {
+      power = 2**count
+      if(power == n) {
+          return true
+      }
+      count++
+  }
+  return false
+};
