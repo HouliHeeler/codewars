@@ -3051,3 +3051,18 @@ var isPowerOfTwo = function(n) {
   }
   return false
 };
+
+//Return given array as an array of objects, with the key being the number, and the value being the character represented by the number in Unicode
+
+function numObj(s){
+  let ans = []
+  let obj = {}
+  let temp;
+  for(i=0;i<s.length;i++) {
+    obj[s[i].toString()] = String.fromCharCode(s[i])
+    console.log(obj)
+    ans.push(obj)
+    obj = {}
+  }
+  return ans
+}
