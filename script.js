@@ -3066,3 +3066,14 @@ function numObj(s){
   }
   return ans
 }
+
+//Return the amount of files in given array that can be saved to the Hard Drive
+
+function save(sizes, hd) {
+  let i = -1;
+  while (hd >=0) {
+    hd -= sizes.shift();
+    i++;
+  }
+  return i;
+}
