@@ -3077,3 +3077,17 @@ function save(sizes, hd) {
   }
   return i;
 }
+
+//Return the indices of the first two numbers in the given array that add up to the specified number
+
+function twoNumbers(array, num) {
+  let x;
+  for(i=0;i<array.length;i++) {
+    if(array[i] < num) {
+      x = num - array[i]
+      if(array.indexOf(x) != -1) {
+        return [i, array.indexOf(x)]
+      }
+      }
+    }
+}
