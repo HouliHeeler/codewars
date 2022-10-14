@@ -3091,3 +3091,22 @@ function twoNumbers(array, num) {
       }
     }
 }
+
+//Increment given array as a whole number by one
+
+var plusOne = function(digits) {
+  if(digits.every(num => num === 9)) {
+     const number = 10 ** digits.length
+     return number.toString().split("").map(num => Number(num))
+     }
+  let newNumber;
+  let temp;
+	for(i=digits.length -1;i>=0;i--) {
+    if(digits[i] !== 9) {
+      temp = i
+      newNumber = (digits.splice(i).reduce((a,b) => Number(a.toString() + b.toString())) + 1).toString().split("").map(num => Number(num))
+      break
+    }
+  }
+  return digits.splice(0, temp).concat(newNumber)
+};
