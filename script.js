@@ -3110,3 +3110,10 @@ var plusOne = function(digits) {
   }
   return digits.splice(0, temp).concat(newNumber)
 };
+
+// Is it a Palindrome?
+
+function isPalindrome(s) {
+  newString = s.split("").filter(el => el.match(/[a-z0-9]+$/i)).join("").toLowerCase()
+  return newString === newString.split("").reverse("").join("")
+}
