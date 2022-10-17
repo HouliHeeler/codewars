@@ -3117,3 +3117,15 @@ function isPalindrome(s) {
   newString = s.split("").filter(el => el.match(/[a-z0-9]+$/i)).join("").toLowerCase()
   return newString === newString.split("").reverse("").join("")
 }
+
+//Is it a Pangram?
+
+var checkIfPangram = function(sentence) {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split("")
+  for(i=0;i<alphabet.length;i++) {
+    if(!sentence.includes(alphabet[i])) {
+      return false
+    }
+  }
+  return true
+};
