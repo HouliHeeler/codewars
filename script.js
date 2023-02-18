@@ -3136,3 +3136,20 @@ function runningSum(arr) {
   arr.reduce((a,c,i,arr) => arr[i] += a)
   return arr
 }
+
+//Return pivot point of an index of numbers
+
+function pivotNumber(arr) {
+  leftSum = 0;
+  rightSum = arr.reduce((a,b) => a + b)
+  let curr;
+  for(i=0;i<arr.length;i++) {
+    curr = arr[i]
+    rightSum -= curr
+    if(leftSum === rightSum) {
+      return i
+    }
+    leftSum += curr
+  }
+  return -1
+}
