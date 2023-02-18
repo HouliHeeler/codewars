@@ -3129,3 +3129,10 @@ var checkIfPangram = function(sentence) {
   }
   return true
 };
+
+//Return running sum of given array
+
+function runningSum(arr) {
+  arr.reduce((a,c,i,arr) => arr[i] += a)
+  return arr
+}
