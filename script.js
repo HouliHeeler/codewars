@@ -3153,3 +3153,18 @@ function pivotNumber(arr) {
   }
   return -1
 }
+
+//Is the first given string a subsequence of the second
+
+function isSubsequence(s, t) {
+  if(s.length > t.length) {
+    return false
+  }
+  let place = 0;
+  for(i=0;i<t.length;i++) {
+    if(s[place] === t[i]) {
+      place++
+    }
+  }
+  return place === s.length
+};
